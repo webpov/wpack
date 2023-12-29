@@ -6,8 +6,8 @@ import './theme.css'
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'WebTrade',
-  description: '3D Web Trading Dashboard',
+  title: 'WebPack',
+  description: '3D Web Blog',
 }
 
 export default function RootLayout({

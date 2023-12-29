@@ -2,6 +2,7 @@ import AppFrameStage from '@/dom/organism/Dashboard/AppFrameStage'
 import ModelGameStage from '@/model/level/ModelGameStage'
 import Image from 'next/image'
 import CustomBackgroundImage from '@/dom/molecule/CustomBackgroundImage'
+import WebPackStage from '@/dom/organism/WebPack/WebPackStage'
 
 export default function Home() {
 
@@ -15,7 +16,7 @@ export default function Home() {
       <div className=' pos-fixed w-100vw h-100vh top-0 left-0 opaci-20'>
         {/* <CustomBackgroundImage /> */}
       </div>
-      <AppFrameStage />
+      <WebPackStage />
     </main>
   )
 }
