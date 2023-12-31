@@ -1,3 +1,4 @@
+import { SocialMediaRow } from "@/dom/atom/popup/SocialMediaRow";
 import PackTabsScene from "@/model/level/pack/PackTabsScene";
 
 export default function WebPackStage({}:any) {
@@ -29,7 +30,12 @@ export default function WebPackStage({}:any) {
 
     
     <div className='flex-row flex-align-stretch tx-white w-95 z-10' >
-        <div className='Q_md_x mt-4 w-10 box-shadow-9-b bg-glass-20 bord-r-25 pt-4 neu-convex flex-col flex-justify-start'>
+         <div className='Q_md_x mt-4 w-10 box-shadow-9-b bg-glass-20 bord-r-25 pt-4 neu-convex flex-col flex-justify-start'>
+        <SocialMediaRow />
+        </div>
+        {/* <div className='Q_md_x mt-4 w-20 box-shadow-9-b bg-glass-20 bord-r-25 pt-4 neu-convex flex-col flex-justify-start'>
+        <SocialMediaRow />
+
           <div className="pb-4 tx-center">Important <small>Links</small> </div>
           <div className="flex-col w-90">
             <a href="http://webpov.vercel.app/" className="flex-col tx-white nodeco">
@@ -55,7 +61,7 @@ export default function WebPackStage({}:any) {
             </h2>
           </a>
           </div>
-        </div>
+        </div> */}
       <div className='tx-roman flex flex-align-stretch flex-1 mt-4 flex-center pos-rel' >
         {"chart" == "chart" && <>
           <div className="w-95  pos-rel bord-r-25 h-100" style={{minHeight:"75vh"}}>
