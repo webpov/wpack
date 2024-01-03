@@ -5,7 +5,8 @@ import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 
 export function FontText ({
-  theFont = '/fonts/marko.ttf',
+  theFont = '',
+  // theFont = '/fonts/marko.ttf',
   children,
   ...props
 }:any)  {
