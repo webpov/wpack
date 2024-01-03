@@ -5,20 +5,21 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 
 
-export const FixedScrollingCamera = ({zThreshold=12}:{zThreshold?:number}) => {
+export const FixedScrollingCamera = ({dimensionThreshold=24}:{dimensionThreshold?:number}) => {
   const { camera, scene } = useThree();
   const lightRef = useRef<any>(); // Ref for the light
 
-  // Function to handle camera movement
-  const moveCamera = (deltaZ: number) => {
-      if (camera.position.z + deltaZ < zThreshold) {return}
-      camera.position.z += deltaZ;
+// Function to handle camera movement
+const moveCamera = (deltaZ: number) => {
+  if (camera.position.y - deltaZ < dimensionThreshold) { return }
+  camera.position.y -= deltaZ;
 
-      // Move the light at half the speed of the camera
-      if (lightRef.current) {
-          lightRef.current.position.z += deltaZ / 1.25;
-      }
-  };
+  // Move the light at half the speed of the camera
+  if (lightRef.current) {
+      lightRef.current.position.y -= deltaZ / 1.25;
+  }
+};
+
 
   const prevTouchY = useRef<number>(0);
   const prevMouseY = useRef<number>(0);
@@ -77,11 +78,13 @@ useEffect(() => {
     document.getElementById('packFrame')?.addEventListener('mousedown', handleMouseDown);
     document.getElementById('packFrame')?.addEventListener('mousemove', handleMouseMove);
     document.getElementById('packFrame')?.addEventListener('mouseup', handleMouseUp);
+    document.getElementById('packFrame')?.addEventListener('mouseleave', handleMouseUp);
 
     return () => {
       document.getElementById('packFrame')?.removeEventListener('mousedown', handleMouseDown);
       document.getElementById('packFrame')?.removeEventListener('mousemove', handleMouseMove);
       document.getElementById('packFrame')?.removeEventListener('mouseup', handleMouseUp);
+      document.getElementById('packFrame')?.removeEventListener('mouseleave', handleMouseUp);
     };
   }, [camera]);
 

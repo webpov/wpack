@@ -56,20 +56,20 @@ export const HoverSelector = forwardRef<HoverSelectorRef, HoverSelectorProps>(({
   useFrame((ctx, delta)=>{
     if (!$mainGroupRef.current) { return }
     if (!isActionActive) {
-      if ($mainGroupRef.current.position.y !== targetRotation) {
-        const lerpedRotation = $mainGroupRef.current.position.y + (targetRotation - $mainGroupRef.current.position.y) * LERP_SPEED;
-        $mainGroupRef.current.position.y =  lerpedRotation;
+      if ($mainGroupRef.current.position.z !== targetRotation) {
+        const lerpedRotation = $mainGroupRef.current.position.z + (targetRotation - $mainGroupRef.current.position.z) * LERP_SPEED;
+        $mainGroupRef.current.position.z =  lerpedRotation;
       } {
-        if ($mainGroupRef.current.position.y > 0 && $mainGroupRef.current.position.y < 0.01){
+        if ($mainGroupRef.current.position.z > 0 && $mainGroupRef.current.position.z < 0.01){
 
-          $mainGroupRef.current.position.y = 0
+          $mainGroupRef.current.position.z = 0
           console.log("here")
           if (reachedEnd) {
             s__reachedEnd(false)
             s__fullSpinCount(fullSpinCount+1)
           }
         } else {
-          // console.log("$mainGroupRef.current.position.y", $mainGroupRef.current.position.y)
+          // console.log("$mainGroupRef.current.position.z", $mainGroupRef.current.position.z)
         }
       }
     return
@@ -79,8 +79,8 @@ export const HoverSelector = forwardRef<HoverSelectorRef, HoverSelectorProps>(({
   const ACTION_DISTANCE = 1
   // const ACTION_DISTANCE = Math.PI * 1.95
     
-    if ($mainGroupRef.current.position.y > ACTION_DISTANCE) {
-      // $mainGroupRef.current.position.y = 0
+    if ($mainGroupRef.current.position.z > ACTION_DISTANCE) {
+      // $mainGroupRef.current.position.z = 0
       if (!reachedEnd) {
         s__reachedEnd(true)
         
@@ -92,9 +92,9 @@ export const HoverSelector = forwardRef<HoverSelectorRef, HoverSelectorProps>(({
       
       sceneCalls.audioNotification("neutral","../sound/click58.wav")
     } else {
-      $mainGroupRef.current.position.y += ACTION_SPEED * delta
+      $mainGroupRef.current.position.z += ACTION_SPEED * delta
     }
-    // console.log("$mainGroupRef.current.position.y", $mainGroupRef.current.position.y)
+    // console.log("$mainGroupRef.current.position.z", $mainGroupRef.current.position.z)
   })
 
   return (<>

@@ -1,5 +1,5 @@
 "use client";
-import { Box, RoundedBox, Sphere } from "@react-three/drei";
+import { Box, Cylinder, RoundedBox, Sphere } from "@react-three/drei";
 import * as THREE from 'three';
 import BookCover from "../../core/BookCover";
 import DynaText from "../../core/DynaText";
@@ -62,18 +62,26 @@ export function PackTab({ state, calls }: any) {
         //   <meshStandardMaterial color="orange" emissive={state.isMoonSpinActive ? "#332200" : "#000"} />
         // </Sphere>
         <>
-        <Box args={[1.3,2,0.9]} position={[-0.6,-0.7,0]}>
+        {/* <Box args={[1.3,2,0.9]} position={[-0.6,-0.7,0]}>
           <meshStandardMaterial color="lightgrey" />
 
-        </Box>
-        <Box args={[0.5,0.5,0.5]} position={[-0.85,!isMoonSpinActive && !reachedEnd ? 0.2 : 0.1,0]}>
+        </Box> */}
+        <Cylinder args={[0.25,0.25,0.25]} position={[-0.85,!isMoonSpinActive && !reachedEnd ? 0.2 : 0.1,0]}
+          rotation={[Math.PI/2, 0, 0]}
+        >
         <meshStandardMaterial color={!isMoonSpinActive && !reachedEnd ? "red" : "grey"} />
 
-      </Box>
+      </Cylinder>
+      
+      {/* <Box args={[0.25,0.25,0.25]} position={[-0.85,!isMoonSpinActive && !reachedEnd ? 0.2 : 0.1,0]}>
+        <meshStandardMaterial color={!isMoonSpinActive && !reachedEnd ? "red" : "grey"} />
+
+      </Box> */}
       </>
         }
       >
-        <group onPointerDown={(e) => { triggerSelectCube(e) }}>
+        <group // onPointerDown={(e) => { triggerSelectCube(e) }}
+        >
           <RoundedBox
             castShadow
             receiveShadow

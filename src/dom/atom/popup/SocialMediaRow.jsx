@@ -21,25 +21,28 @@ export function SocialMediaRow ({}) {
       
     <div className='tx-white flex-wrap'>
       
+    <Link className='pa-1 nodeco opaci-chov--50' href="https://webpov.vercel.app/" >
+        <img src="/webpovlogo.jpg" alt="bank" width={64} height={64} className='block bord-r-100p noverflow' /> 
+      </Link>
+      <Link className='pa-1 nodeco opaci-chov--50' href="https://wpack.vercel.app/" >
+        <img src="/www.jpg" alt="bank" width={64} height={64} className='block bord-r-100p noverflow'
+          style={{border:"2px solid #eeaa33"}}
+          /> 
+        <div className='tx-white tx-center'>PACK</div>
+      </Link>
+      <Link className='pa-1 nodeco opaci-chov--50' href="https://wtrade.vercel.app/" >
+        <img src="/webt2.jpg" alt="bank" width={64} height={64} className='block bord-r-100p noverflow'
+         /> 
+        <div className='tx-white tx-center'>TRADE</div>
+      </Link>
       <Link className='pa-1 nodeco opaci-chov--50' href="https://wqub.vercel.app/" >
         <img src="/webcity.jpg" alt="bank" width={64} height={64} className='block bord-r-100p noverflow' /> 
         <div className='tx-white tx-center'>QUB</div>
-      </Link>
-      <Link className='pa-1 nodeco opaci-chov--50' href="https://wtrade.vercel.app/" >
-        <img src="/webt.jpg" alt="bank" width={64} height={64} className='block bord-r-100p noverflow'
-          style={{border:"2px solid #eeaa33"}}
-         /> 
-        <div className='tx-white tx-center'>TRADE</div>
       </Link>
       <Link className='pa-1 nodeco opaci-chov--50' href="https://wfun.vercel.app/" >
         <img src="/wfun.jpg" alt="bank" width={64} height={64} className='block bord-r-100p noverflow'
          /> 
         <div className='tx-white tx-center'>FUN</div>
-      </Link>
-      <Link className='pa-1 nodeco opaci-chov--50' href="https://wpack.vercel.app/" >
-        <img src="/wpackqub.jpg" alt="bank" width={64} height={64} className='block bord-r-100p noverflow'
-         /> 
-        <div className='tx-white tx-center'>PACK</div>
       </Link>
 {/*       
       <Link className='nodeco pa-1 opaci-chov--50' href="https://wtrade.vercel.app/web/pack" >
@@ -47,9 +50,6 @@ export function SocialMediaRow ({}) {
         <div className='tx-white tx-center'>PACK</div>
       </Link> */}
       
-      <Link className='pa-1 nodeco opaci-chov--50' href="https://webpov.vercel.app/" >
-        <img src="/webpovlogo.jpg" alt="bank" width={64} height={64} className='block bord-r-100p noverflow' /> 
-      </Link>
     </div>
     </div>
   )

@@ -42,11 +42,11 @@ export default function PackTabsScene() {
     for (let i = 0; i < count; i++) {
       const yPosition = 0 // selectedCubes.has(i) ? 0.1 : 0;
       const xPosition = (i % 2 === 0) ? -zigzagAmplitude : zigzagAmplitude;
-      positions.push([xPosition, yPosition, i * interval]);
+      positions.push([xPosition, i * interval, 0]);
     }
     return positions;
   }
-  const boxPositions = generateBoxPositions(14, 1, 0.1);
+  const boxPositions = generateBoxPositions(14, -2, 0.1);
   function toggleCubeSelection(index: any) {
     const newSelection = new Set(selectedCubes);
     if (newSelection.has(index)) {
@@ -87,24 +87,25 @@ export default function PackTabsScene() {
   if (!mounted) return <LoadingFullScreen />;
 
   return (
-    <div id="packFrame" className={`flex-col h-100 tx-altfont-4 bg-b-10 box-shadow-i-9-b ${true ? "" : "nopointer"}`}>
+    <div id="packFrame" className={`flex-col h-100 tx-altfont-4 bg-b-10 ${true ? "" : "nopointer"}`}>
       <Canvas
 
         style={{ maxWidth: "100vw", height: "100%" }}
         shadows
-        camera={{ fov: 10, position: [0, isSmallDevice ? 18 : 13, isSmallDevice ? 18 : 13] }}
+        camera={{ fov: 130, position: [0, isSmallDevice ? .75 : .25, isSmallDevice ? 2 : 1.5] }}
         gl={{ preserveDrawingBuffer: true }}
       >
         
-    <group position={[0, 1.3, -0.3]}>
-      <DynaText text={`${"Tap\na Book"}`} color="#fff" emissive="#fff" textAlign="center"
-        font={0.5} position={[0, 0, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
+    <group position={[0, 1.8, -0.3]}>
+      <DynaText text={`${"Click any\nRed Button"}`} color="#777777" emissive="#777777" textAlign="center"
+        font={0.3} position={[0, 0, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
     </group>
-        <FixedScrollingCamera zThreshold={isSmallDevice ? 16 : 13} />
+        <FixedScrollingCamera dimensionThreshold={isSmallDevice ? -28 : -30} />
         <ambientLight intensity={0.02} />
         {/* <pointLight position={[6, 8, 4]} intensity={2} distance={20} /> */}
+    <group position={[0, 0.4, 0]}>
         {boxPositions.map((position, index) => (
-          <group key={index} position={[-0.25, 0, 0]}>
+          <group key={index} position={[-0.5, 0, 0]}>
                 <PackTab
                  state={{index, selectedCubes, position}}
                  calls={{openLinkInThisTab, toggleCubeSelection}}
@@ -112,6 +113,7 @@ export default function PackTabsScene() {
 
           </group>
         ))}
+          </group>
 
       </Canvas>
     </div>
