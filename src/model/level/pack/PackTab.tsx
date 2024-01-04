@@ -5,31 +5,19 @@ import BookCover from "../../core/BookCover";
 import DynaText from "../../core/DynaText";
 import { TIERPACK_LINKS, TIERPACK_NAMES, TIERPACK_COLORS } from "./DEFAULT_PACKS";
 import { HoverSelector } from "@/model/tools/HoverSelector";
-import { useRef, useState } from "react";
+import { forwardRef, useImperativeHandle, useRef, useState } from "react";
 
 
-export function PackTab({ state, calls }: any) {
+export const PackTab = forwardRef(({ state, calls }: any)=> {
     const $hoverSelector = useRef<any>(null);
+  const [isSelected, s__isSelected] = useState(false);
   const [reachedEnd, s__reachedEnd] = useState(false);
   const [fullSpinCount, s__fullSpinCount] = useState(0);
 
   const [isMoonSpinActive, s__isMoonisSpinActive] = useState(false);
   const triggerIsActionActive = () => {
-
-    // if (state.selectedCubes.size > 0) {
-    //   console.log("eeeeeeeeeeeeeeee")
-    //   return
-    // }
-    if (isMoonSpinActive) {
-      // alert("Moon spin is active");
-      calls.toggleCubeSelection(state.index)
-    //   if ($hoverSelector.current) {
-    //     $hoverSelector.current.triggerClickStart();
-    //   }
-    } else {
-      calls.toggleCubeSelection(state.index)
-    }
-    s__isMoonisSpinActive(!isMoonSpinActive);
+    s__isSelected(!isMoonSpinActive)
+    s__isMoonisSpinActive(!isMoonSpinActive)
   };
   const triggerSelectCube = (e:any) => {
     
@@ -38,12 +26,23 @@ export function PackTab({ state, calls }: any) {
     if ($hoverSelector.current) {
       $hoverSelector.current.triggerClickStart();
     }
-    calls.toggleCubeSelection(state.index);
+    // calls.toggleCubeSelection(state.index);
+    s__isSelected(true)
   }
   const triggerFullSpinCount = (val:any) => {
     console.log("triggerFullSpinCount", val);
     s__fullSpinCount(val);
   }
+
+  useImperativeHandle(state.ref, () => ({
+    isSelected,
+    triggerSelectCube,
+    triggerFullSpinCount,
+    isMoonSpinActive,
+    triggerIsActionActive,
+    reachedEnd,
+    fullSpinCount,
+  }));
   return (<>
 
 
@@ -52,7 +51,7 @@ export function PackTab({ state, calls }: any) {
 
       
       <HoverSelector
-      isEnabled={state.selectedCubes.size == 0}
+      isEnabled={!isSelected}
       ref={$hoverSelector}
       sceneState={{}}
       {...{
@@ -94,7 +93,7 @@ export function PackTab({ state, calls }: any) {
             args={[1, 1.5, 0.2]}
             
           >
-            <meshStandardMaterial color={!state.selectedCubes.has(state.index) ? "lightgrey" : "white"} />
+            <meshStandardMaterial color={!isSelected ? "lightgrey" : "white"} />
           </RoundedBox>
           <group position={[0, 0, 0.13]} rotation={[Math.PI / 2, 0, 0]}>
 
@@ -110,13 +109,13 @@ export function PackTab({ state, calls }: any) {
           
           <group scale={[0.01, 0.1, 0.1]} rotation={[Math.PI / 2, 0, Math.PI / 2]}
            position={[0.48, -0.24, 0]}>
-            <BookCover color={!!state.selectedCubes.has(state.index) ? TIERPACK_COLORS[state.index][0] : TIERPACK_COLORS[state.index][1]} />
+            <BookCover color={!!isSelected ? TIERPACK_COLORS[state.index][0] : TIERPACK_COLORS[state.index][1]} />
           </group>
         </group>
 
 
 
-    {state.selectedCubes.has(state.index) && (
+    {isSelected && (
       
       <group position={[0, -0.01, -0.02]}>
       <group position={[-1, .72, 0]}>
@@ -128,7 +127,7 @@ export function PackTab({ state, calls }: any) {
         </Box>
         </group>
 )}
-    {state.selectedCubes.has(state.index) && (
+    {isSelected && (
       <group 
         onPointerDown={() => calls.openLinkInThisTab(state.index)}
 
@@ -246,4 +245,9 @@ export function PackTab({ state, calls }: any) {
     </group>
 
   </>);
-}
+})
+
+
+PackTab.displayName = 'PackTab';
+
+export default PackTab;

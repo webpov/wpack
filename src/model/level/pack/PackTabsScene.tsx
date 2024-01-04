@@ -18,24 +18,28 @@ import DynaText from "@/model/core/DynaText";
 export default function PackTabsScene() {
   const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
   const [mounted, setMounted] = useState(false);
-  const [selectedCubes, setSelectedCubes] = useState(new Set());
+  // const [selectedCubes, setSelectedCubes] = useState(new Set());
+  // const $packTab:any = useRef()
 
+
+  
   useEffect(() => {
     setMounted(true);
   }, []);
 
 
+
   const [lastTap, setLastTap] = useState(0);
 
-  function handleDoubleTap(index: number) {
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - lastTap;
-    if (tapLength < 500 && tapLength > 0) {
-      // Double tap detected
-      toggleCubeSelection(index);
-    }
-    setLastTap(currentTime);
-  }
+  // function handleDoubleTap(index: number) {
+  //   const currentTime = new Date().getTime();
+  //   const tapLength = currentTime - lastTap;
+  //   if (tapLength < 500 && tapLength > 0) {
+  //     // Double tap detected
+  //     toggleCubeSelection(index);
+  //   }
+  //   setLastTap(currentTime);
+  // }
 
   function generateBoxPositions(count: number, interval: number, zigzagAmplitude: number = 0) {
     const positions = [];
@@ -47,18 +51,18 @@ export default function PackTabsScene() {
     return positions;
   }
   const boxPositions = generateBoxPositions(14, -2, 0.1);
-  function toggleCubeSelection(index: any) {
-    const newSelection = new Set(selectedCubes);
+  // function toggleCubeSelection(index: any) {
+  //   const newSelection = new Set(selectedCubes);
     
   
-    if (newSelection.has(index)) {
-      newSelection.delete(index);
-    } else {
-      newSelection.add(index);
+  //   if (newSelection.has(index)) {
+  //     newSelection.delete(index);
+  //   } else {
+  //     newSelection.add(index);
 
-    }
-    setSelectedCubes(newSelection);
-  }
+  //   }
+  //   setSelectedCubes(newSelection);
+  // }
   const openLinkInNewTab = (index: number) => {
     const url = TIERPACK_LINKS[index]
     if (url.startsWith("http")) {
@@ -115,9 +119,9 @@ export default function PackTabsScene() {
     <group position={[0, 0.4, 0]}>
         {boxPositions.map((position, index) => (
           <group key={index} position={[0.5, 0, 0]}>
-                <PackTab
-                 state={{index, selectedCubes, position}}
-                 calls={{openLinkInThisTab, toggleCubeSelection}}
+                <PackTab 
+                 state={{index,  position}}
+                 calls={{openLinkInThisTab, }}
                  />
 
           </group>

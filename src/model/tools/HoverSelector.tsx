@@ -36,7 +36,7 @@ export const HoverSelector = forwardRef<HoverSelectorRef, HoverSelectorProps>(({
 
   const triggerClickStart = (e: any) => {
     if (!!e?.stopPropagation) {e.stopPropagation();}
-    if (!isEnabled) {return}
+    // if (!isEnabled) {return}
     if (isActionActive || reachedEnd) {
       return;
     }
