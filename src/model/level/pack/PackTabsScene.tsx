@@ -96,8 +96,12 @@ export default function PackTabsScene() {
         gl={{ preserveDrawingBuffer: true }}
       >
         
-    <group position={[0.45, 1.5, -0.3]}>
-      <DynaText text={`${"Click any\nRed Button\n|\nv"}`} color="#333333" emissive="#333333" textAlign="center"
+    <group position={[0.45, 1.45, -0.3]}>
+      
+    <DynaText text={`${"Scroll Down\n&"}`} color="#333333" emissive="#333333" textAlign="center"
+        font={0.2} position={[0, .65, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
+
+      <DynaText text={`${"Click a RED Button\n|\nv"}`} color="#331100" emissive="#331100" textAlign="center"
         font={0.3} position={[0, 0, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
     </group>
         <FixedScrollingCamera dimensionThreshold={isSmallDevice ? -28 : -30} />
