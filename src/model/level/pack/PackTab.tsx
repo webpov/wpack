@@ -102,7 +102,8 @@ export function PackTab({ state, calls }: any) {
               font={0.1} position={[0, 0, 0.2]} />
           </group>
           
-          <group scale={[0.01, 0.1, 0.1]} rotation={[Math.PI / 2, 0, Math.PI / 2]} position={[0.48, -0.24, 0]}>
+          <group scale={[0.01, 0.1, 0.1]} rotation={[Math.PI / 2, 0, Math.PI / 2]}
+           position={[0.48, -0.24, 0]}>
             <BookCover color={!!state.selectedCubes.has(state.index) ? TIERPACK_COLORS[state.index][0] : TIERPACK_COLORS[state.index][1]} />
           </group>
         </group>
@@ -112,22 +113,22 @@ export function PackTab({ state, calls }: any) {
     {state.selectedCubes.has(state.index) && (
       
       <group position={[0, -0.01, -0.02]}>
-      <group position={[1, .72, 0]}>
-      <DynaText text={`Double-Tap to Enter`} color="#000" emissive="#000" textAlign="start"
+      <group position={[-1, .72, 0]}>
+      <DynaText text={`Click to Enter`} color="#000" emissive="#000" textAlign="start"
         font={0.1} position={[0, 0, 0.115]} rotation={[0, 0, 0]} />
         </group>
-        <Box args={[0.8, 0.2, 0.02]} position={[1, .7, 0.1]} castShadow receiveShadow>
+        <Box args={[0.8, 0.2, 0.02]} position={[-1, .7, 0.1]} castShadow receiveShadow>
           <meshStandardMaterial color="lightgrey" />
         </Box>
         </group>
 )}
     {state.selectedCubes.has(state.index) && (
       <group 
-        onDoubleClick={() => calls.openLinkInThisTab(state.index)}
+        onClick={() => calls.openLinkInThisTab(state.index)}
 
       >
 
-        <Box args={[0.88, 1.28, 0.02]} position={[1, 0, 0.1]} castShadow receiveShadow>
+        <Box args={[0.88, 1.28, 0.02]} position={[-1, 0, 0.1]} castShadow receiveShadow>
           <meshStandardMaterial color="grey" />
         </Box>
         {[...Array(5)].map((_, row) => {
@@ -203,29 +204,29 @@ export function PackTab({ state, calls }: any) {
 
           return (
             <group key={row}>
-              <Box args={[0.15, 0.12, 0.02]} position={[0.7, 0.5 - 0.25 * row, 0.13]} castShadow receiveShadow>
+              <Box args={[0.15, 0.12, 0.02]} position={[-0.7, 0.5 - 0.25 * row, 0.13]} castShadow receiveShadow>
                 <meshStandardMaterial color={['red', 'gold', 'green', 'blue', 'purple'][row]} />
               </Box>
-              <Box args={[0.85, 0.2, 0.05]} position={[1, 0.5 - 0.25 * row, 0.1]} castShadow receiveShadow>
+              <Box args={[0.85, 0.2, 0.05]} position={[-1, 0.5 - 0.25 * row, 0.1]} castShadow receiveShadow>
                 <meshStandardMaterial color="black" />
               </Box>
-              <group position={[1.08, 0.5, 0]}>
+              <group position={[-1.08, 0.5, 0]}>
                 <DynaText text={`${tokenStringA}`} color="#fff" emissive="#fff" textAlign="start"
                   font={0.07} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
               </group>
-              <group position={[1.08, 0.25, 0]}>
+              <group position={[-1.08, 0.25, 0]}>
                 <DynaText text={`${tokenStringB}`} color="#fff" emissive="#fff" textAlign="start"
                   font={0.07} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
               </group>
-              <group position={[1.08, 0, 0]}>
+              <group position={[-1.08, 0, 0]}>
                 <DynaText text={`${tokenStringC}`} color="#fff" emissive="#fff" textAlign="start"
                   font={0.07} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
               </group>
-              <group position={[1.08, -0.25, 0]}>
+              <group position={[-1.08, -0.25, 0]}>
                 <DynaText text={`${tokenStringD}`} color="#fff" emissive="#fff" textAlign="start"
                   font={0.07} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
               </group>
-              <group position={[1.08, -0.5, 0]}>
+              <group position={[-1.08, -0.5, 0]}>
                 <DynaText text={`${tokenStringE}`} color="#fff" emissive="#fff" textAlign="start"
                   font={0.07} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
               </group>

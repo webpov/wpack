@@ -96,12 +96,15 @@ export default function PackTabsScene() {
         gl={{ preserveDrawingBuffer: true }}
       >
         
-    <group position={[0.45, 1.45, -0.3]}>
+    <group position={[1.5, 1.25, -0.3]}>
       
     <DynaText text={`${"Scroll Down\n&"}`} color="#333333" emissive="#333333" textAlign="center"
-        font={0.2} position={[0, .65, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
+        font={0.2} position={[-1.5, .75, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
 
-      <DynaText text={`${"Click a RED Button\n|\nv"}`} color="#331100" emissive="#331100" textAlign="center"
+<DynaText text={`${"Click a RED Button"}`} color="#331100" emissive="#331100" textAlign="center"
+        font={0.3} position={[-0.75, 0.4, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
+        
+      <DynaText text={`${"|\nv"}`} color="#660000" emissive="#331100" textAlign="center"
         font={0.3} position={[0, 0, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
     </group>
         <FixedScrollingCamera dimensionThreshold={isSmallDevice ? -28 : -30} />
@@ -109,7 +112,7 @@ export default function PackTabsScene() {
         {/* <pointLight position={[6, 8, 4]} intensity={2} distance={20} /> */}
     <group position={[0, 0.4, 0]}>
         {boxPositions.map((position, index) => (
-          <group key={index} position={[-0.5, 0, 0]}>
+          <group key={index} position={[0.5, 0, 0]}>
                 <PackTab
                  state={{index, selectedCubes, position}}
                  calls={{openLinkInThisTab, toggleCubeSelection}}
