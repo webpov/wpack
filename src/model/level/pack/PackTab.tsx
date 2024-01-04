@@ -130,7 +130,7 @@ export function PackTab({ state, calls }: any) {
 )}
     {state.selectedCubes.has(state.index) && (
       <group 
-        onClick={() => calls.openLinkInThisTab(state.index)}
+        onPointerDown={() => calls.openLinkInThisTab(state.index)}
 
       >
 
