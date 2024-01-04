@@ -129,7 +129,7 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
 )}
     {isSelected && (
       <group 
-        onPointerDown={() => calls.openLinkInThisTab(state.index)}
+        onPointerDown={(e:any) => {e.stopPropagation();calls.openLinkInThisTab(state.index)}}
 
       >
 

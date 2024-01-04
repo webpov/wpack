@@ -95,7 +95,11 @@ export const HoverSelector = forwardRef<HoverSelectorRef, HoverSelectorProps>(({
       
       sceneCalls.audioNotification("neutral","../sound/click58.wav")
     } else {
+    if ($mainGroupRef.current.position.z + ACTION_SPEED * delta > ACTION_DISTANCE) {
+    } else {
+
       $mainGroupRef.current.position.z += ACTION_SPEED * delta
+    }
     }
     // console.log("$mainGroupRef.current.position.z", $mainGroupRef.current.position.z)
   })

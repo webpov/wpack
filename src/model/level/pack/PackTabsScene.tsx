@@ -11,7 +11,7 @@ import { useUrlParamCatcher } from "@/../script/util/hook/useUrlParamCatcher";
 
 
 import FixedScrollingCamera from "../../core/FixedScrollingCamera";
-import { TIERPACK_LINKS } from "./DEFAULT_PACKS";
+import { TIERPACK_LINKS, TIERPACK_NAMES } from "./DEFAULT_PACKS";
 import { PackTab } from "./PackTab";
 import DynaText from "@/model/core/DynaText";
 
@@ -71,24 +71,31 @@ export default function PackTabsScene() {
       window.open(`https://${url}`, "_blank");
     }
   }
-  const openLinkInThisTab = (index: number) => {
+  const openLinkInThisTab = (index: number): void => {
     if (index < 0 || index >= TIERPACK_LINKS.length) {
       console.error("Invalid index for TIERPACK_LINKS");
       return;
     }
-
-    const url = TIERPACK_LINKS[index];
-    if (/^https?:\/\//i.test(url)) {
-      // If the URL starts with http or https
-      window.location.href = url;
-    } else if (url.startsWith('/')) {
-      // If the URL is a relative path
-      window.location.href = window.location.origin + url;
+    
+    const url: string = TIERPACK_LINKS[index];
+    const userConfirmation: boolean = confirm(`Do you want to proceed to "${(TIERPACK_NAMES[index] || 'Unnamed').replace("\n"," ")}" portfolio link? \n\n\nRedirection URL:${TIERPACK_LINKS[index]}`);
+  
+    if (userConfirmation) {
+      if (/^https?:\/\//i.test(url)) {
+        // If the URL starts with http or https
+        window.location.href = url;
+      } else if (url.startsWith('/')) {
+        // If the URL is a relative path
+        window.location.href = window.location.origin + url;
+      } else {
+        // If the URL is not a relative path and does not start with http or https
+        window.location.href = `https://${url}`;
+      }
     } else {
-      // If the URL is not a relative path and does not start with http or https
-      window.location.href = `https://${url}`;
+      console.log("Redirection cancelled by the user.");
     }
   };
+  
 
   if (!mounted) return <LoadingFullScreen />;
 
@@ -118,7 +125,7 @@ export default function PackTabsScene() {
         {/* <pointLight position={[6, 8, 4]} intensity={2} distance={20} /> */}
     <group position={[0, 0.4, 0]}>
         {boxPositions.map((position, index) => (
-          <group key={index} position={[0.75, 0, 0]}>
+          <group key={index} position={[0.7, 0, 0]}>
                 <PackTab 
                  state={{index,  position}}
                  calls={{openLinkInThisTab, }}
