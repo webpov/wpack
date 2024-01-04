@@ -71,7 +71,7 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
           <meshStandardMaterial color="lightgrey" />
 
         </Box> */}
-        <Cylinder args={[0.25,0.25,0.25]} position={[1,!isMoonSpinActive && !reachedEnd ? 0.2 : 0.1,0]}
+        <Cylinder args={[0.25,0.25,0.25]} position={[-1.75,!isMoonSpinActive && !reachedEnd ? 0.2 : 0.1,0]}
           rotation={[Math.PI/2, 0, 0]}
         >
         <meshStandardMaterial color={!isMoonSpinActive && !reachedEnd ? "red" : "grey"} />

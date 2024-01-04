@@ -111,14 +111,14 @@ export default function PackTabsScene() {
         font={0.3} position={[-0.75, 0.4, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
         
       <DynaText text={`${"|\nv"}`} color="#660000" emissive="#331100" textAlign="center"
-        font={0.3} position={[0, 0, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
+        font={0.3} position={[-2.25, 0, 0.13]} rotation={[0, 0, -.75]} hoverSpeed={2} />
     </group>
         <FixedScrollingCamera dimensionThreshold={isSmallDevice ? -28 : -30} />
         <ambientLight intensity={0.02} />
         {/* <pointLight position={[6, 8, 4]} intensity={2} distance={20} /> */}
     <group position={[0, 0.4, 0]}>
         {boxPositions.map((position, index) => (
-          <group key={index} position={[0.5, 0, 0]}>
+          <group key={index} position={[0.75, 0, 0]}>
                 <PackTab 
                  state={{index,  position}}
                  calls={{openLinkInThisTab, }}
