@@ -1,25 +1,30 @@
 "use client"
-
-import { MapControls } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 
 
 export const FixedScrollingCamera = ({dimensionThreshold=24}:{dimensionThreshold?:number}) => {
-  const { camera, scene } = useThree();
+  const { camera } = useThree();
   const lightRef = useRef<any>(); // Ref for the light
+  const velocity = useRef(0); // Velocity for damping
+  const dampingFactor = 0.2; // Adjust this value for smoother damping
 
-// Function to handle camera movement
-const moveCamera = (deltaZ: number) => {
-  if (camera.position.y - deltaZ < dimensionThreshold) { return }
-  camera.position.y -= deltaZ;
+  // Function to handle camera movement with damping
+  const moveCamera = (deltaZ: number) => {
+    velocity.current += deltaZ;
+  };
 
-  // Move the light at half the speed of the camera
-  if (lightRef.current) {
-      lightRef.current.position.y -= deltaZ / 1.25;
-  }
-};
-
+  // Damping effect
+  useFrame(() => {
+    if (Math.abs(velocity.current) < 0.001) velocity.current = 0; // Threshold to stop damping
+    if (velocity.current !== 0) {
+      camera.position.y -= velocity.current;
+      if (lightRef.current) {
+        lightRef.current.position.y -= velocity.current / 1.25;
+      }
+      velocity.current *= (1 - dampingFactor); // Apply damping
+    }
+  });
 
   const prevTouchY = useRef<number>(0);
   const prevMouseY = useRef<number>(0);
@@ -87,10 +92,6 @@ useEffect(() => {
       document.getElementById('packFrame')?.removeEventListener('mouseleave', handleMouseUp);
     };
   }, [camera]);
-
-  useFrame(() => {
-    // Lock all other camera angles here if needed
-  });
 
   return (<>
       <group>
