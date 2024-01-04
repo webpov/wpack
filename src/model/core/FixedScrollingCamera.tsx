@@ -7,7 +7,7 @@ export const FixedScrollingCamera = ({dimensionThreshold=24}:{dimensionThreshold
   const { camera } = useThree();
   const lightRef = useRef<any>(); // Ref for the light
   const velocity = useRef(0); // Velocity for damping
-  const dampingFactor = 0.2; // Adjust this value for smoother damping
+  const dampingFactor = 0.4; // Adjust this value for smoother damping
 
   // Function to handle camera movement with damping
   const moveCamera = (deltaZ: number) => {
@@ -16,7 +16,7 @@ export const FixedScrollingCamera = ({dimensionThreshold=24}:{dimensionThreshold
 
   // Damping effect
   useFrame(() => {
-    if (Math.abs(velocity.current) < 0.001) velocity.current = 0; // Threshold to stop damping
+    if (Math.abs(velocity.current) < 0.0005) velocity.current = 0; // Threshold to stop damping
     if (velocity.current !== 0) {
       camera.position.y -= velocity.current;
       if (lightRef.current) {
