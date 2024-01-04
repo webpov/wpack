@@ -15,6 +15,11 @@ export function PackTab({ state, calls }: any) {
 
   const [isMoonSpinActive, s__isMoonisSpinActive] = useState(false);
   const triggerIsActionActive = () => {
+
+    // if (state.selectedCubes.size > 0) {
+    //   console.log("eeeeeeeeeeeeeeee")
+    //   return
+    // }
     if (isMoonSpinActive) {
       // alert("Moon spin is active");
       calls.toggleCubeSelection(state.index)
@@ -47,6 +52,7 @@ export function PackTab({ state, calls }: any) {
 
       
       <HoverSelector
+      isEnabled={state.selectedCubes.size == 0}
       ref={$hoverSelector}
       sceneState={{}}
       {...{

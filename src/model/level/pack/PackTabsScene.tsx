@@ -49,6 +49,8 @@ export default function PackTabsScene() {
   const boxPositions = generateBoxPositions(14, -2, 0.1);
   function toggleCubeSelection(index: any) {
     const newSelection = new Set(selectedCubes);
+    
+  
     if (newSelection.has(index)) {
       newSelection.delete(index);
     } else {
@@ -92,7 +94,7 @@ export default function PackTabsScene() {
 
         style={{ maxWidth: "100vw", height: "100%" }}
         shadows
-        camera={{ fov: 130, position: [0, isSmallDevice ? .75 : .25, isSmallDevice ? 2 : 1.5] }}
+        camera={{ fov: 130, position: [0, isSmallDevice ? .75 : .25, isSmallDevice ? 2.25 : 1.5] }}
         gl={{ preserveDrawingBuffer: true }}
       >
         

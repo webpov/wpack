@@ -10,6 +10,7 @@ type HoverSelectorProps = {
   triggerModel: ReactNode;
   s__fullSpinCount: (count: number) => void;
   isActionActive: boolean;
+  isEnabled: boolean;
   s__isActionActive: (isActive: boolean) => void;
   children?: ReactNode;
 };
@@ -27,6 +28,7 @@ export const HoverSelector = forwardRef<HoverSelectorRef, HoverSelectorProps>(({
   s__fullSpinCount,
   isActionActive,
   s__isActionActive,
+  isEnabled = false,
   children,
   ...props
 }, ref) => {
@@ -34,6 +36,7 @@ export const HoverSelector = forwardRef<HoverSelectorRef, HoverSelectorProps>(({
 
   const triggerClickStart = (e: any) => {
     if (!!e?.stopPropagation) {e.stopPropagation();}
+    if (!isEnabled) {return}
     if (isActionActive || reachedEnd) {
       return;
     }
@@ -87,7 +90,7 @@ export const HoverSelector = forwardRef<HoverSelectorRef, HoverSelectorProps>(({
         setTimeout(()=>{
           s__isActionActive(false)
           
-        },2500)
+        },3500)
       }
       
       sceneCalls.audioNotification("neutral","../sound/click58.wav")
