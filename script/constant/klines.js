@@ -4,18 +4,27 @@ export const StandardTokens = [
   "USDT",    // Tether
   "BNB",     // Binance Coin
   "SOL",     // Solana
+  "RAY",     // Solana
+  "BONK",     // BONK
+  "WIF",     // WIF
   "XRP",     // XRP
   "USDC",    // USD Coin
   "ADA",     // Cardano
   "LINK",    // Chainlink
   "RUNE",    // THORChain
+  "INJ",     // Injective
   "RNDR",    // Render Token
+  "FET",    // fetch ai
+  "AGIX",    // AGIX
   "MATIC",   // Polygon
+  "NMR",   // Polygon
   "AAVE",    // Aave
   "DOT",     // Polkadot
   "KSM",     // Kusama
   "PEPE",    // Pepe
   "GRT",     // The Graph
+  "GTC",     // gitcoin
+  "XTZ",     // tezos
   "AVAX",    // Avalanche
   "LTC",     // Litecoin
   "SHIB",    // Shiba Inu
@@ -33,9 +42,12 @@ export const StandardTokens = [
   "CAKE",    // PancakeSwap
   "AR",      // Arweave
   "INJ",     // Injective Protocol
+  "OCEAN",     // Injective Protocol
   "TRB",     // Tellor
   "SOL",     // Solana
   "JTO",     // Just Token
+  "BADGER",     // BADGER dao
+  "T",     // t
   "ENJ",     // Enjin Coin
   "STETH",   // Lido Staked Ether
   "TRX",     // TRON
@@ -45,6 +57,7 @@ export const StandardTokens = [
   "BCH",     // Bitcoin Cash
   "ATOM",    // Cosmos
   "ICP",     // Internet Computer
+  "COMP",     // compound
   "NEAR",    // NEAR Protocol
   "XLM",     // Stellar
   "HBAR",    // Hedera Hashgraph
@@ -52,20 +65,25 @@ export const StandardTokens = [
   "CRO",     // Cronos
   "STX",     // Stacks
   "QNT",     // Quant
+  "QTUM",     // Quant
   "MNT",     // Mantle
   "TAO",     // Bittensor
   "ALGO",    // Algorand
   "EGLD",    // MultiversX
+  "LDO",    // MultiversX
   "FDUSD",   // First Digital USD
   "BSV",     // Bitcoin SV
+  "ORDI",     // Bitcoin ordinals
   "RETH",    // Rocket Pool ETH
   "FLOW",    // Flow
+  "WLD",    // Flow
   "MKR",     // Maker
   "ORDI",    // ORDI
   "MINA",    // Mina Protocol
   "THETA",   // Theta Network
   "BTT",     // BitTorrent
   "SAND",    // The Sandbox
+  "SC",    // The Sandbox
   "OSMO",    // Osmosis
   "WEMIX",   // WEMIX
   "KCS",     // KuCoin Token
@@ -76,6 +94,7 @@ export const StandardTokens = [
   "KAVA",    // Kava
   "NEO",     // NEO
   "TKX",     // Tokenize Xchange
+  "ZEC",     // zcash
   "SNX",     // Synthetix
   "SUI",     // 
   "ROSE",     // 
@@ -88,12 +107,17 @@ export const StandardTokensGradients = {
   "LINK": "#4de463,#994607",
   "RUNE": "#68b1fa,#6c4c3c",
   "RNDR": "#ff1601,#5dff55",
+  "FET": "#ff1601,#5dff55",
+  "AGIX": "#ff1601,#5dff55",
   "MATIC": "#78e653,#a7f16d",
+  "NMR": "#78e653,#a7f16d",
   "AAVE": "#5bbd03,#b834e5",
   "DOT": "#fd4cc7,#3dc8b0",
   "KSM": "#8a6fd5,#293bea",
   "PEPE": "#89a31e,#765805",
   "GRT": "#90d011,#eabca2",
+  "GTC": "#90d011,#eabca2",
+  "XTZ": "#90d011,#eabca2",
   "ADA": "#336c40,#eb3ed8",
   "DOGE": "#05c034,#838321",
   "BNB": "#6d13e7,#db1336",
@@ -107,6 +131,7 @@ export const StandardTokensGradients = {
   "FIL": "#68a5df,#2b9681",
   "OP": "#5d02f6,#66f366",
   "ARB": "#fc56a4,#195827",
+  "OCEAN": "#fca684,#19a827",
   "TIA": "#2fd85f,#641db0",
   "LUNC": "#5396e4,#61956b",
   "FTM": "#4e30a2,#ec0856",
@@ -117,8 +142,13 @@ export const StandardTokensGradients = {
   "INJ": "#6779c6,#b975f7",
   "TRB": "#002005,#5501b5",
   "SOL": "#e3c3b2,#c9f55b",
+  "RAY": "#e3c3b2,#c9f55b",
+  "BONK": "#e3c3b2,#c9f55b",
+  "WIF": "#e3c3b2,#c9f55b",
   "ENJ": "#e3c3b2,#c9f55b",
   "JTO": "#7b6720,#a5baaa",
+  "BADGER": "#7b6720,#a5baaa",
+  "T": "#7b6720,#a5baaa",
   "USDT": "#76c8a6,#1e4877",
   "USDC": "#7e4988,#e1a95f",
   "STETH": "#3da9fc,#fabea7",
@@ -129,6 +159,7 @@ export const StandardTokensGradients = {
   "BCH": "#f7971e,#ffd200",
   "ATOM": "#a8ff78,#78ffd6",
   "ICP": "#acb6e5,#86fde8",
+  "COMP": "#acb6e5,#86fde8",
   "NEAR": "#f4c4f3,#fc67fa",
   "XLM": "#12c2e9,#c471ed,#f64f59",
   "HBAR": "#f2d50f,#da0641",
@@ -136,21 +167,26 @@ export const StandardTokensGradients = {
   "CRO": "#6a11cb,#2575fc",
   "STX": "#ff9966,#ff5e62",
   "QNT": "#667eea,#764ba2",
+  "QTUM": "#667eea,#764ba2",
   "MNT": "#ff758c,#ff7eb3",
   "MNT": "#0093e9,#80d0c7",
   "TAO": "#ff9a8b,#ff6a88",
   "ALGO": "#43e97b,#38f9d7",
   "EGLD": "#fa709a,#fee140",
+  "LDO": "#fa709a,#fee140",
   "FDUSD": "#30cfd0,#330867",
   "BSV": "#8ec5fc,#e0c3fc",
+  "ORDI": "#8ec5fc,#e0c3fc",
   "RETH": "#f093fb,#f5576c",
   "FLOW": "#43cbff,#9708cc",
+  "WLD": "#43cbff,#9708cc",
   "MKR": "#ff758c,#ff7eb3",
   "ORDI": "#85ffbd,#fffb7d",
   "MINA": "#ffc3a0,#ffafbd",
   "THETA": "#8a2387,#e94057,#f27121",
   "BTT": "#fddb92,#d1fdff",
   "SAND": "#f5f7fa,#c3cfe2",
+  "SC": "#f5f7fa,#c3cfe2",
   "OSMO": "#4facfe,#00f2fe",
   "WEMIX": "#43e97b,#38f9d7",
   "KCS": "#fa709a,#fee140",
@@ -161,6 +197,7 @@ export const StandardTokensGradients = {
   "KAVA": "#ffc3a0,#ffafbd",
   "NEO": "#8a2387,#e94057,#f27121",
   "TKX": "#fddb92,#d1fdff",
+  "ZEC": "#fddb92,#d1fdff",
   "SNX": "#f5f7fa,#c3cfe2",
   "SUI": "#fddb92,#d1fdff",
   "ROSE": "#f5f7fa,#c3cfe2",

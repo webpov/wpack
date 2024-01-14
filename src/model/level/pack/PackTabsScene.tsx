@@ -50,7 +50,9 @@ export default function PackTabsScene() {
     }
     return positions;
   }
-  const boxPositions = generateBoxPositions(14, -2, 0.1);
+
+  const boxPositions = generateBoxPositions(TIERPACK_LINKS.length, -2, 0.1);
+  // const boxPositions = generateBoxPositions(14, -2, 0.1);
   // function toggleCubeSelection(index: any) {
   //   const newSelection = new Set(selectedCubes);
     
