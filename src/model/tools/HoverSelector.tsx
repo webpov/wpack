@@ -77,19 +77,23 @@ export const HoverSelector = forwardRef<HoverSelectorRef, HoverSelectorProps>(({
       }
     return
   }
+  console.log("555", $mainGroupRef.current.position.z)
     
 
   const ACTION_DISTANCE = 1
   // const ACTION_DISTANCE = Math.PI * 1.95
     
-    if ($mainGroupRef.current.position.z > ACTION_DISTANCE) {
+    if (Math.round($mainGroupRef.current.position.z) >= ACTION_DISTANCE) {
       // $mainGroupRef.current.position.z = 0
+      console.log("kkk")
+
       if (!reachedEnd) {
         s__reachedEnd(true)
         
+        console.log("qqqqq")
         setTimeout(()=>{
           s__isActionActive(false)
-          
+          console.log("asdasdasdaegerg")
         },3500)
       }
       
