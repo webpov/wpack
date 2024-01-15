@@ -29,7 +29,7 @@ export default function WebPackStage({}:any) {
     </>}
 
     
-    <div className='flex-row flex-align-stretch tx-black w-100 z-10' >
+    <div className='flex-row flex-align-stretch tx-black w-100 z-10 h-100vh' >
          <div className='pa-3 ma-3 pos-abs z-800 left-0 bottom-0 Q_md_x w-10 box-shadow-9-b bg-glass-20 bord-r-25 neu-convex flex-col flex-justify-start'>
         <SocialMediaRow />
         </div>

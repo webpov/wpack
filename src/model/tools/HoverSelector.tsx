@@ -77,7 +77,7 @@ export const HoverSelector = forwardRef<HoverSelectorRef, HoverSelectorProps>(({
       }
     return
   }
-  console.log("555", $mainGroupRef.current.position.z)
+  // console.log("555", $mainGroupRef.current.position.z)
     
 
   const ACTION_DISTANCE = 1
@@ -85,16 +85,16 @@ export const HoverSelector = forwardRef<HoverSelectorRef, HoverSelectorProps>(({
     
     if (Math.round($mainGroupRef.current.position.z) >= ACTION_DISTANCE) {
       // $mainGroupRef.current.position.z = 0
-      console.log("kkk")
+      // console.log("kkk")
 
       if (!reachedEnd) {
         s__reachedEnd(true)
         
-        console.log("qqqqq")
+        // console.log("qqqqq")
         setTimeout(()=>{
           s__isActionActive(false)
-          console.log("asdasdasdaegerg")
-        },3500)
+          // console.log("asdasdasdaegerg")
+        },5000)
       }
       
       sceneCalls.audioNotification("neutral","../sound/click58.wav")

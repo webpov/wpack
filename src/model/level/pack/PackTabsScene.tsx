@@ -1,5 +1,6 @@
 "use client"
-import { MapControls, OrbitControls } from "@react-three/drei";
+import { Fog, Vector3 } from "three";
+import { Box, Cylinder, MapControls, OrbitControls, Sphere } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useState, useEffect, useRef } from "react";
 import { useMediaQuery } from "usehooks-ts";
@@ -107,10 +108,16 @@ export default function PackTabsScene() {
 
         style={{ maxWidth: "100vw", height: "100%" }}
         shadows
-        camera={{ fov: 130, position: [0, isSmallDevice ? .75 : .25, isSmallDevice ? 2.25 : 1.5] }}
+        camera={{ fov: 140, position: [0, isSmallDevice ? .75 : .25, isSmallDevice ? 2.25 : 1.25] }}
         gl={{ preserveDrawingBuffer: true }}
       >
         
+        <group scale={1.25} rotation={[0.25,-Math.PI/2,Math.PI]} position={[0,5.5,0]}>
+            <PackGroup />
+            <TradeGroup />
+            <QubGroup />
+        </group>
+
     <group position={[1.5, 1.25, -0.3]}>
       
     <DynaText text={`${"Scroll Down\n&"}`} color="#333333" emissive="#333333" textAlign="center"
@@ -143,3 +150,73 @@ export default function PackTabsScene() {
 }
 
 
+
+const PackGroup = () => {
+    const $sphereRef:any = useRef();
+
+    // useFrame((state, delta) => {
+    //     $sphereRef.current.position.y = Math.sin(state.clock.elapsedTime) * 0.03;
+    // });
+
+    return (
+        <group position={[0,0,1]} onClick={() => window.location.href = "https://wpack.vercel.app/"}>
+            <DynaText text={"PACK"} color={0x000000}
+                     position={new Vector3(0,-0.5,0)} rotation={[Math.PI,-Math.PI/2,0]}
+                     isSelected={true} font={0.25} onClick={()=>{}}
+            />
+            <DynaText text={"PACK"} color={0x000000}
+                     position={new Vector3(0,-0.5,0)} rotation={[Math.PI,Math.PI/2,0]}
+                     isSelected={true} font={0.25} onClick={()=>{}}
+            />
+            <Sphere ref={$sphereRef} args={[0.3,16,16]} position={[0,0,0]} receiveShadow castShadow>
+                <meshStandardMaterial color="#00A9E8" emissive={"#333333"} />
+            </Sphere>
+        </group>
+    );
+};
+const TradeGroup = () => {
+    const $cylinderRef:any = useRef();
+
+    // useFrame((state, delta) => {
+    //     $cylinderRef.current.rotation.y -= 0.001; // Rotate Cylinder
+    // });
+    return (
+        <group position={[1,0,0]} onClick={() => window.location.href = "https://wtrade.vercel.app/"}>
+            <DynaText text={"TRADE"} color={0x000000}
+                     position={new Vector3(0,-0.5,0)} rotation={[Math.PI,-Math.PI/2,0]}
+                     isSelected={true} font={0.25} onClick={()=>{}}
+            />
+            <DynaText text={"TRADE"} color={0x000000}
+                     position={new Vector3(0,-0.5,0)} rotation={[Math.PI,Math.PI/2,0]}
+                     isSelected={true} font={0.25} onClick={()=>{}}
+            />
+            <Cylinder ref={$cylinderRef}  args={[0.5,0,0.68,4]} rotation={[0,0,0]} position={[0,0,0]} receiveShadow castShadow>
+                <meshStandardMaterial color="#E50088" emissive={"#333333"} />  
+            </Cylinder>
+        </group>
+    );
+};
+const QubGroup = () => {
+    const $boxRef:any = useRef();
+
+    // useFrame((state, delta) => {
+    //     $boxRef.current.rotation.y -= 0.001; // Rotate Box
+    //     $boxRef.current.rotation.x += 0.001; // Rotate Box
+    //     $boxRef.current.rotation.z += 0.002; // Rotate Box
+    // });
+    return (
+        <group position={[0,0,-1]} onClick={() => window.location.href = "https://wqub.vercel.app/"}>
+            <DynaText text={"QUB"} color={0x000000}
+                 position={new Vector3(0,-0.5,0)} rotation={[Math.PI,-Math.PI/2,0]}
+                 isSelected={true} font={0.25} onClick={()=>{}}
+            />
+            <DynaText text={"QUB"} color={0x000000}
+                 position={new Vector3(0,-0.5,0)} rotation={[Math.PI,Math.PI/2,0]}
+                 isSelected={true} font={0.25} onClick={()=>{}}
+            />
+            <Box ref={$boxRef}  args={[0.5,0.5,0.5]} position={[0,0,0]} receiveShadow castShadow>
+                <meshStandardMaterial color="#F7EA00" emissive={"#333333"} />
+            </Box>
+        </group>
+    );
+};

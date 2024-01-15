@@ -1,17 +1,17 @@
 import TIERPACK_LINKS_JSON from "./TIERPACKS.json"
 
 export const TIERPACK_COLORS = [
-    ["#e3ffec", "#bbfec6"], // webpov
-    ["#d6fae7", "#c1e2f8"], // Solana Season
-    ["#fae0d0", "#fec0c3"], // AI Future
-    ["#fdb7ff", "#e4fcff"], // Coinbase Ventures
-    ["#fae0d0", "#e5b38d"], // a16z
-    ["#fdb7ff", "#dd8ff8"], // paradigm
-    ["#e3ffec", "#bbfec6"], // winkelvoss
-    ["#ffe7d7", "#eacbb8"], // btc/neco
-    ["#fee1cd", "#ffd28c"],  // Layer 1
+    ["#b5b5b5", "#999999", "#ffffff"], // webpov
+    ["#A7FEDB", "#18FB9F", "#7824eC"], // Solana Season
+    ["#FFCB9B", "#FfFbaC", "#a12F00"], // AI Future
+    ["#d0f0FF", "#a0e2FF", "#333333"], // Coinbase Ventures
+    ["#FDD9B0", "#FBBF7D", "#ffffff"], // a16z
+    ["#D2FFD2", "#ffffff", "#000000"], // paradigm
+    ["#eAFcFf", "#bAF9Ff", "#e0f0e0"], // winkelvoss
+    ["#dddddd", "#999999", "#ff6600"], // btc/neco
+    ["#ddeeff", "#ffffff", "#000000"],  // Layer 1
 
-    ["#fee1cd", "#ffd28c"],  // technology\npoet
+    ["#Ffeff0", "#F8d7e8", "#8D002B"],  // technology\npoet
 
 ]
 
@@ -25,13 +25,13 @@ export const TIERPACK_NAMES = [
     "AI\nFuture",
     "Coinbase\nVentures",
 
-    "a16z",
-    "paradigm",
-    "winkelvoss",
-    "btc\neco",
-    "layer 1",
+    "Andreessen\nHorowitz",
+    "Paradigm\nXYZ",
+    "Winkelvoss\nBrothers",
+    "Bitcoin\nEcosystem",
+    "Layer 1\nChains",
 
-    "technology\npoet",
+    "Technology\nPoet",
 
 
 ]
@@ -47,10 +47,10 @@ export const TIERPACK_IMAGES = [
     "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
 
     "https://s3.coinmarketcap.com/static-gravity/image/4df1b2f7b52a417495dd318011967f12.jpg",
-    "https://webpov.vercel.app/_next/image?url=%2Flogo.jpg&w=64&q=75",
+    "https://pbs.twimg.com/profile_images/1654170684422062080/zpDlueaT_400x400.jpg",
     "https://s2.coinmarketcap.com/static/img/coins/64x64/3306.png",
     "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-    "https://webpov.vercel.app/_next/image?url=%2Flogo.jpg&w=64&q=75",
+    "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
 
     "https://pbs.twimg.com/profile_images/1707158401522839553/SBK9jMh8_400x400.jpg",
 

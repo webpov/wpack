@@ -97,13 +97,23 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
           </RoundedBox>
           <group position={[0, 0, 0.13]} rotation={[Math.PI / 2, 0, 0]}>
 
-            <DynaText text={`${TIERPACK_NAMES[state.index] || 'Book'}`} color="#000" emissive="#000"
-              font={0.2} position={[0, 0, -0.5]} />
+            <DynaText text={`${TIERPACK_NAMES[state.index] || 'Book'}`} color={TIERPACK_COLORS[state.index][2]} emissive={TIERPACK_COLORS[state.index][2]}
+              font={0.2} position={[0, 0, -0.45]} />
 
               
-                <Html position={[0, 0, 0.1]} scale={0.5} rotation={[-Math.PI/2, 0, 0]} transform >
-                        <img src={TIERPACK_IMAGES[state.index]} alt="" className="w-50px h-50px bord-r-15" />
+<Html  position={[0, 0, 0.05]} scale={0.33} rotation={[-Math.PI/2, 0, 0]} transform occlude={"raycast"} >
+{/* className="border-black pa-1 bord-r-5" */}
+                        <img  src={TIERPACK_IMAGES[state.index]} alt="" className="z--1 bord-r-15"  bord-r-15
+                          width={60}
+                          height={60}
+                          style={{verticalAlign:"bottom"}}
+                        />
                     </Html>
+
+                    
+                {/* <Html position={[0, 0, 0.7]} scale={0.5} rotation={[-Math.PI/2, 0, 0]} transform >
+                        {`Tier Pack`}
+                    </Html> */}
 
 
             <DynaText text={`#1${state.index}`} color="#666" emissive="#000"

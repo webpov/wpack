@@ -31,6 +31,8 @@
   }
 }
 
+
+
 @media only screen and (max-width: 600px) {
   .favSymbolsModalContent {
     max-height: 45vh;
