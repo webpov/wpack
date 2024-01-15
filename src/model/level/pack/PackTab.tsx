@@ -134,8 +134,8 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
       
       <group position={[0, -0.01, -0.02]}>
       <group position={[-1, .72, 0]}>
-      <DynaText text={`Click to Enter`} color="#000" emissive="#000" textAlign="start"
-        font={0.1} position={[0, 0, 0.115]} rotation={[0, 0, 0]} />
+      <DynaText text={`Click Tier List to Enter`} color="#000" emissive="#000" textAlign="start"
+        font={0.09} position={[0, 0, 0.115]} rotation={[0, 0, 0]} />
         </group>
         <Box args={[0.8, 0.2, 0.02]} position={[-1, .7, 0.1]} castShadow receiveShadow>
           <meshStandardMaterial color="lightgrey" />
@@ -215,11 +215,11 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
             }
           });
 
-          const tokenStringA = Atokens.join(', ')?.replace(/USDT/g, "");
-          const tokenStringB = Btokens.join(', ')?.replace(/USDT/g, "");
-          const tokenStringC = Ctokens.join(', ')?.replace(/USDT/g, "");
-          const tokenStringD = Dtokens.join(', ')?.replace(/USDT/g, "");
-          const tokenStringE = Etokens.join(', ')?.replace(/USDT/g, "");
+          const tokenStringA = Atokens.join(' · ')?.replace(/USDT/g, "");
+          const tokenStringB = Btokens.join(' · ')?.replace(/USDT/g, "");
+          const tokenStringC = Ctokens.join(' · ')?.replace(/USDT/g, "");
+          const tokenStringD = Dtokens.join(' · ')?.replace(/USDT/g, "");
+          const tokenStringE = Etokens.join(' · ')?.replace(/USDT/g, "");
 
 
           return (
@@ -232,19 +232,19 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
               </Box>
               <group position={[-1.08, 0.5, 0]}>
                 <DynaText text={`${tokenStringA}`} color="#fff" emissive="#fff" textAlign="start"
-                  font={0.07} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
+                  font={0.12} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
               </group>
               <group position={[-1.08, 0.25, 0]}>
                 <DynaText text={`${tokenStringB}`} color="#fff" emissive="#fff" textAlign="start"
-                  font={0.07} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
+                  font={0.1} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
               </group>
               <group position={[-1.08, 0, 0]}>
                 <DynaText text={`${tokenStringC}`} color="#fff" emissive="#fff" textAlign="start"
-                  font={0.07} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
+                  font={0.09} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
               </group>
               <group position={[-1.08, -0.25, 0]}>
                 <DynaText text={`${tokenStringD}`} color="#fff" emissive="#fff" textAlign="start"
-                  font={0.07} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
+                  font={0.08} position={[0, 0, 0.13]} rotation={[0, 0, 0]} />
               </group>
               <group position={[-1.08, -0.5, 0]}>
                 <DynaText text={`${tokenStringE}`} color="#fff" emissive="#fff" textAlign="start"

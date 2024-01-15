@@ -72,13 +72,13 @@
         "a0": {
             "symbol": "RNDRUSDT"
         },
-        "a1": {
+        "b1": {
             "symbol": "AGIXUSDT"
         },
         "b0": {
             "symbol": "FETUSDT"
         },
-        "b1": {
+        "c0": {
             "symbol": "OCEANUSDT"
         },
         "d0": {
@@ -98,13 +98,13 @@
         "b1": {
             "symbol": "SEIUSDT"
         },
-        "b2": {
+        "c3": {
             "symbol": "GRTUSDT"
         },
         "c0": {
             "symbol": "SUIUSDT"
         },
-        "c1": {
+        "e0": {
             "symbol": "MINAUSDT"
         },
         "c2": {
@@ -270,7 +270,10 @@
             "symbol": "ARBUSDT"
         },
         "d0": {
-            "symbol": "MATICUSDT"
+            "symbol": "LTCUSDT"
+        },
+        "e0": {
+            "symbol": "SANDUSDT"
         }
     }
 ]

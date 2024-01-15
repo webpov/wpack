@@ -6,7 +6,7 @@ export function LoadingFullScreen() {
           <div className="flex-col h-min-50vh">
             
             <Link href="/" className="z-600 nodeco bg-w-10 bord-r-50 mt-3 opaci-chov--50 hover-3 " >
-              <div className="tx-white 1 pa-2 ">Loading...</div>
+              <div style={{color:"grey"}}  className=" 1 pa-2 ">Loading...</div>
             </Link>
           </div>
         </div>

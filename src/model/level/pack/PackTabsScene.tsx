@@ -1,6 +1,6 @@
 "use client"
 import { Fog, Vector3 } from "three";
-import { Box, Cylinder, MapControls, OrbitControls, Sphere } from "@react-three/drei";
+import { Box, Cylinder, MapControls, OrbitControls, Plane, Sphere } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useState, useEffect, useRef } from "react";
 import { useMediaQuery } from "usehooks-ts";
@@ -52,7 +52,7 @@ export default function PackTabsScene() {
     return positions;
   }
 
-  const boxPositions = generateBoxPositions(TIERPACK_LINKS.length, -2, 0.1);
+  const boxPositions = generateBoxPositions(TIERPACK_LINKS.length, -2, 0.05);
   // const boxPositions = generateBoxPositions(14, -2, 0.1);
   // function toggleCubeSelection(index: any) {
   //   const newSelection = new Set(selectedCubes);
@@ -108,11 +108,13 @@ export default function PackTabsScene() {
 
         style={{ maxWidth: "100vw", height: "100%" }}
         shadows
-        camera={{ fov: 140, position: [0, isSmallDevice ? .75 : .25, isSmallDevice ? 2.25 : 1.25] }}
+        camera={{ fov: 140, position: [0, isSmallDevice ? .35 : .25, isSmallDevice ? 1.5 : 1.25] }}
         gl={{ preserveDrawingBuffer: true }}
       >
-        
-        <group scale={1.25} rotation={[0.25,-Math.PI/2,Math.PI]} position={[0,5.5,0]}>
+        <Plane rotation={[-Math.PI/2,0,0]} position={[0,4.5,0]} args={[8,8]}>
+          <meshStandardMaterial transparent={true} opacity={0.5} />
+        </Plane>
+        <group scale={1} rotation={[0.25,-Math.PI/2,Math.PI]} position={[0,5,0]}>
             <PackGroup />
             <TradeGroup />
             <QubGroup />
@@ -121,10 +123,10 @@ export default function PackTabsScene() {
     <group position={[1.5, 1.25, -0.3]}>
       
     <DynaText text={`${"Scroll Down\n&"}`} color="#333333" emissive="#333333" textAlign="center"
-        font={0.2} position={[-1.5, .75, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
+        font={0.2} position={[-1.5, .7, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
 
 <DynaText text={`${"Click a RED Button"}`} color="#331100" emissive="#331100" textAlign="center"
-        font={0.3} position={[-0.75, 0.4, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
+        font={0.3} position={[-1.1, 0.4, 0.13]} rotation={[0, 0, 0]} hoverSpeed={2} />
         
       <DynaText text={`${"|\nv"}`} color="#660000" emissive="#331100" textAlign="center"
         font={0.3} position={[-2.25, 0, 0.13]} rotation={[0, 0, -.75]} hoverSpeed={2} />
@@ -159,7 +161,7 @@ const PackGroup = () => {
     // });
 
     return (
-        <group position={[0,0,1]} onClick={() => window.location.href = "https://wpack.vercel.app/"}>
+        <group position={[0,0,1]} onPointerDown={() => window.location.href = "https://wpack.vercel.app/"}>
             <DynaText text={"PACK"} color={0x000000}
                      position={new Vector3(0,-0.5,0)} rotation={[Math.PI,-Math.PI/2,0]}
                      isSelected={true} font={0.25} onClick={()=>{}}
@@ -178,10 +180,10 @@ const TradeGroup = () => {
     const $cylinderRef:any = useRef();
 
     // useFrame((state, delta) => {
-    //     $cylinderRef.current.rotation.y -= 0.001; // Rotate Cylinder
+    //     $cylinderRef.current.rotation.y -= 0.003; // Rotate Cylinder
     // });
     return (
-        <group position={[1,0,0]} onClick={() => window.location.href = "https://wtrade.vercel.app/"}>
+        <group position={[1,0,0]} onPointerDown={() => window.location.href = "https://wtrade.vercel.app/"}>
             <DynaText text={"TRADE"} color={0x000000}
                      position={new Vector3(0,-0.5,0)} rotation={[Math.PI,-Math.PI/2,0]}
                      isSelected={true} font={0.25} onClick={()=>{}}
@@ -205,7 +207,7 @@ const QubGroup = () => {
     //     $boxRef.current.rotation.z += 0.002; // Rotate Box
     // });
     return (
-        <group position={[0,0,-1]} onClick={() => window.location.href = "https://wqub.vercel.app/"}>
+        <group position={[0,0,-1]} onPointerDown={() => window.location.href = "https://wqub.vercel.app/"}>
             <DynaText text={"QUB"} color={0x000000}
                  position={new Vector3(0,-0.5,0)} rotation={[Math.PI,-Math.PI/2,0]}
                  isSelected={true} font={0.25} onClick={()=>{}}
