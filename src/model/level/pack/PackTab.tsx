@@ -1,9 +1,9 @@
 "use client";
-import { Box, Cylinder, RoundedBox, Sphere } from "@react-three/drei";
+import { Box, Cylinder, Html, RoundedBox, Sphere } from "@react-three/drei";
 import * as THREE from 'three';
 import BookCover from "../../core/BookCover";
 import DynaText from "../../core/DynaText";
-import { TIERPACK_LINKS, TIERPACK_NAMES, TIERPACK_COLORS } from "./DEFAULT_PACKS";
+import { TIERPACK_LINKS, TIERPACK_NAMES, TIERPACK_COLORS, TIERPACK_IMAGES } from "./DEFAULT_PACKS";
 import { HoverSelector } from "@/model/tools/HoverSelector";
 import { forwardRef, useImperativeHandle, useRef, useState } from "react";
 
@@ -100,11 +100,16 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
             <DynaText text={`${TIERPACK_NAMES[state.index] || 'Book'}`} color="#000" emissive="#000"
               font={0.2} position={[0, 0, -0.5]} />
 
+              
+                <Html position={[0, 0, 0.1]} scale={0.5} rotation={[-Math.PI/2, 0, 0]} transform >
+                        <img src={TIERPACK_IMAGES[state.index]} alt="" className="w-50px h-50px bord-r-15" />
+                    </Html>
 
-            <DynaText text={`#${state.index}`} color="#666" emissive="#000"
-              font={0.5} position={[0, 0, 0.5]} />
+
+            <DynaText text={`#1${state.index}`} color="#666" emissive="#000"
+              font={0.3} position={[0.24, 0, 0.6]} />
             <DynaText text={`Tier Pack`} color="#333" emissive="#000"
-              font={0.1} position={[0, 0, 0.2]} />
+              font={0.1} position={[-0.24, 0, 0.6]} />
           </group>
           
           <group scale={[0.01, 0.1, 0.1]} rotation={[Math.PI / 2, 0, Math.PI / 2]}
