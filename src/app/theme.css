@@ -49,3 +49,8 @@
 .border-black {
   border: 1px solid black;
 }
+
+.allChildrenDivNoClick div {
+  cursor: default !important;
+  pointer-events: none !important;
+}

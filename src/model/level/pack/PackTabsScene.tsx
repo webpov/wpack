@@ -103,7 +103,7 @@ export default function PackTabsScene() {
   if (!mounted) return <LoadingFullScreen />;
 
   return (
-    <div id="packFrame" className={`flex-col h-100 tx-altfont-4 bg-b-10 ${true ? "" : "nopointer"}`}>
+    <section id="packFrame" className={`flex-col h-100 tx-altfont-4 bg-b-10 ${true ? "" : "nopointer"}`}>
       <Canvas
 
         style={{ maxWidth: "100vw", height: "100%" }}
@@ -114,7 +114,7 @@ export default function PackTabsScene() {
         <Plane rotation={[-Math.PI/2,0,0]} position={[0,4.5,0]} args={[8,8]}>
           <meshStandardMaterial transparent={true} opacity={0.5} />
         </Plane>
-        <group scale={1} rotation={[0.25,-Math.PI/2,Math.PI]} position={[0,5,0]}>
+        <group scale={1} rotation={[0.25,-Math.PI/2,Math.PI]} position={[0,5,0]} >
             <PackGroup />
             <TradeGroup />
             <QubGroup />
@@ -147,7 +147,7 @@ export default function PackTabsScene() {
           </group>
 
       </Canvas>
-    </div>
+    </section>
   );
 }
 

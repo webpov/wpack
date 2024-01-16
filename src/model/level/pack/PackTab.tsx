@@ -6,8 +6,30 @@ import DynaText from "../../core/DynaText";
 import { TIERPACK_LINKS, TIERPACK_NAMES, TIERPACK_COLORS, TIERPACK_IMAGES } from "./DEFAULT_PACKS";
 import { HoverSelector } from "@/model/tools/HoverSelector";
 import { forwardRef, useImperativeHandle, useRef, useState } from "react";
+import { useLoader } from '@react-three/fiber';
+import { TextureLoader, Texture } from 'three';
+import React, { MouseEvent } from 'react';
 
 
+interface ImagePlaneProps {
+  src: string;
+  position: [number, number, number];
+}
+
+const ImagePlane: React.FC<ImagePlaneProps> = ({ src, position,  }) => {
+  const texture: Texture = useLoader(TextureLoader, src);
+
+  return (
+    <mesh 
+      position={position}
+      rotation={[-Math.PI / 2, 0, 0]}
+      // onClick={onClick}
+    >
+      <planeBufferGeometry args={[0.5, 0.5]} />
+      <meshStandardMaterial map={texture}  transparent={true} />
+    </mesh>
+  );
+}
 export const PackTab = forwardRef(({ state, calls }: any)=> {
     const $hoverSelector = useRef<any>(null);
   const [isSelected, s__isSelected] = useState(false);
@@ -101,19 +123,23 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
               font={0.2} position={[0, 0, -0.45]} />
 
               
-<Html  position={[0, 0, 0.05]} scale={0.33} rotation={[-Math.PI/2, 0, 0]} transform occlude={"raycast"} className="nopointer nocursor noselect" >
-{/* className="border-black pa-1 bord-r-5" */}
-                        <img  src={TIERPACK_IMAGES[state.index]} alt="" className="z--1 bord-r-15"  bord-r-15
+{/* <Html  position={[0, 0, 0.05]} scale={0.33} rotation={[-Math.PI/2, 0, 0]} transform occlude={"raycast"} className="nopointer nocursor noselect" 
+  
+>
+                        <img  src={TIERPACK_IMAGES[state.index]} alt="" className="nopointer nocursor noselect z--1 bord-r-15"  bord-r-15
+                        onPointerDown={(e) => {
+                          alert("clicked");
+                          e.stopPropagation();
+                        }}
                           width={60}
                           height={60}
                           style={{verticalAlign:"bottom"}}
                         />
-                    </Html>
-
-                    
-                {/* <Html position={[0, 0, 0.7]} scale={0.5} rotation={[-Math.PI/2, 0, 0]} transform >
-                        {`Tier Pack`}
                     </Html> */}
+                    <ImagePlane 
+  src={TIERPACK_IMAGES[state.index]} 
+  position={[0, 0.001, 0.05]} 
+/>
 
 
             <DynaText text={`#1${state.index}`} color="#666" emissive="#000"

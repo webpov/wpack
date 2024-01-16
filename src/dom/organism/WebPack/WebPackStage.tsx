@@ -36,7 +36,7 @@ export default function WebPackStage({}:any) {
       <div className='tx-roman flex flex-align-stretch flex-1  flex-center pos-rel' >
         {"chart" == "chart" && <>
           <div className="w-100  pos-rel bord-r-25 h-100" style={{minHeight:"100vh"}}>
-            <div className=' w-100 noverflow h-100'
+            <div className=' w-100 noverflow h-100 '
               style={{}}
             >
                 <PackTabsScene />
