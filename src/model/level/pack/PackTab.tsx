@@ -101,7 +101,7 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
               font={0.2} position={[0, 0, -0.45]} />
 
               
-<Html  position={[0, 0, 0.05]} scale={0.33} rotation={[-Math.PI/2, 0, 0]} transform occlude={"raycast"} >
+<Html  position={[0, 0, 0.05]} scale={0.33} rotation={[-Math.PI/2, 0, 0]} transform occlude={"raycast"} className="nopointer nocursor noselect" >
 {/* className="border-black pa-1 bord-r-5" */}
                         <img  src={TIERPACK_IMAGES[state.index]} alt="" className="z--1 bord-r-15"  bord-r-15
                           width={60}
