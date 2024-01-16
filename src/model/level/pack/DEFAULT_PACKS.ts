@@ -9,7 +9,7 @@ export const TIERPACK_COLORS = [
     ["#D2FFD2", "#ffffff", "#000000"], // paradigm
     ["#eAFcFf", "#bAF9Ff", "#e0f0e0"], // winkelvoss
     ["#dddddd", "#999999", "#ff6600"], // btc/neco
-    ["#ddeeff", "#ffffff", "#000000"],  // Layer 1
+    ["#ddeeff", "#f0f0f0", "#000000"],  // Layer 1
 
     ["#Ffeff0", "#F8d7e8", "#8D002B"],  // technology\npoet
 
@@ -61,20 +61,20 @@ export const TIERPACK_NAMES = [
 
 const baseImageLink = '@/../packs'
 export const TIERPACK_IMAGES = [
-    `${baseImageLink}/webpovlogo.jpg`,
+    `${baseImageLink}/_webpov.png`,
     
 
-    `${baseImageLink}/solana5426.png`,
-    `${baseImageLink}/aifire.png`,
-    `${baseImageLink}/coinbase3408.png`,
+    `${baseImageLink}/_sol.png`,
+    `${baseImageLink}/__ai.png`,
+    `${baseImageLink}/__coinbase.png`,
 
-    `${baseImageLink}/a16z.jpg`,
-    `${baseImageLink}/paradigm.jpg`,
-    `${baseImageLink}/winkelvoss.png`,
-    `${baseImageLink}/bitcoin1.png`,
-    `${baseImageLink}/layer1eth1027.png`,
+    `${baseImageLink}/__a16z.png`,
+    `${baseImageLink}/_paradigm.png`,
+    `${baseImageLink}/_winkelvoss.png`,
+    `${baseImageLink}/_bitcoin.png`,
+    `${baseImageLink}/__layer1.png`,
 
-    `${baseImageLink}/techpoet.jpg`,
+    `${baseImageLink}/__techpoet.png`,
 
 
 ]

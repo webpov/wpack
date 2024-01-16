@@ -26,7 +26,7 @@ const ImagePlane: React.FC<ImagePlaneProps> = ({ src, position,  }) => {
       // onClick={onClick}
     >
       <planeBufferGeometry args={[0.5, 0.5]} />
-      <meshStandardMaterial map={texture}  transparent={true} />
+      <meshStandardMaterial map={texture}   transparent={true} />
     </mesh>
   );
 }
