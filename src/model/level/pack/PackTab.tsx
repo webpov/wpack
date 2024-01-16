@@ -5,7 +5,7 @@ import BookCover from "../../core/BookCover";
 import DynaText from "../../core/DynaText";
 import { TIERPACK_LINKS, TIERPACK_NAMES, TIERPACK_COLORS, TIERPACK_IMAGES } from "./DEFAULT_PACKS";
 import { HoverSelector } from "@/model/tools/HoverSelector";
-import { forwardRef, useImperativeHandle, useRef, useState } from "react";
+import { Suspense, forwardRef, useImperativeHandle, useRef, useState } from "react";
 import { useLoader } from '@react-three/fiber';
 import { TextureLoader, Texture } from 'three';
 import React, { MouseEvent } from 'react';
@@ -139,8 +139,10 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
 
 
 
-
-            {/* <ImagePlane src={TIERPACK_IMAGES[state.index]} position={[0, 0.001, 0.05]} /> */}
+                    
+            <Suspense fallback={<group> <Box args={[0.1,0.1,0.1]}></Box> </group>}>
+              <ImagePlane src={TIERPACK_IMAGES[state.index]} position={[0, 0.001, 0.05]} />
+            </Suspense>
 
 
             <DynaText text={`#1${state.index}`} color="#666" emissive="#000"
