@@ -93,12 +93,21 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
           <meshStandardMaterial color="lightgrey" />
 
         </Box> */}
-        <Cylinder args={[0.25,0.25,0.25]} position={[-1.75,!isMoonSpinActive && !reachedEnd ? 0.2 : 0.1,0]}
+        <Cylinder args={[0.25,0.25,0.3]} position={[-1.75,0.2,!isMoonSpinActive && !reachedEnd ? -0.02 : -0.1]}
           rotation={[Math.PI/2, 0, 0]}
         >
         <meshStandardMaterial color={!isMoonSpinActive && !reachedEnd ? "red" : "grey"} />
 
       </Cylinder>
+      <RoundedBox position={[-1.75,0.2,-0.1]} args={[0.75,0.75,0.25]} >
+        <meshStandardMaterial color={"white"} />
+      </RoundedBox>
+      <Box position={[0,0.2,-0.05]} args={[0.2,0.2,0.3]} >
+        <meshStandardMaterial color={"white"} />
+      </Box>
+      <Box position={[-1,0.2,-0.1]} args={[2,0.1,0.1]} >
+        <meshStandardMaterial color={"white"} />
+      </Box>
       
       {/* <Box args={[0.25,0.25,0.25]} position={[-0.85,!isMoonSpinActive && !reachedEnd ? 0.2 : 0.1,0]}>
         <meshStandardMaterial color={!isMoonSpinActive && !reachedEnd ? "red" : "grey"} />
@@ -147,7 +156,7 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
 
             <DynaText text={`#1${state.index}`} color="#666" emissive="#000"
               font={0.3} position={[0.24, 0, 0.6]} />
-            <DynaText text={`Tier Pack`} color="#333" emissive="#000"
+            <DynaText text={`Tier List`} color="#333" emissive="#000"
               font={0.1} position={[-0.24, 0, 0.6]} />
           </group>
           
