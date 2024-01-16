@@ -38,21 +38,43 @@ export const TIERPACK_NAMES = [
 
 
 
-export const TIERPACK_IMAGES = [
-    "https://webpov.vercel.app/_next/image?url=%2Flogo.jpg&w=64&q=75",
+// export const TIERPACK_IMAGES = [
+//     "https://webpov.vercel.app/_next/image?url=%2Flogo.jpg&w=64&q=75",
     
 
-    "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png",
-    "https://s2.coinmarketcap.com/static/cloud/img/TrendingIcon.png?_=b7f5c59",
-    "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
+//     "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png",
+//     "https://s2.coinmarketcap.com/static/cloud/img/TrendingIcon.png?_=b7f5c59",
+//     "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
 
-    "https://s3.coinmarketcap.com/static-gravity/image/4df1b2f7b52a417495dd318011967f12.jpg",
-    "https://pbs.twimg.com/profile_images/1654170684422062080/zpDlueaT_400x400.jpg",
-    "https://s2.coinmarketcap.com/static/img/coins/64x64/3306.png",
-    "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-    "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+//     "https://s3.coinmarketcap.com/static-gravity/image/4df1b2f7b52a417495dd318011967f12.jpg",
+//     "https://pbs.twimg.com/profile_images/1654170684422062080/zpDlueaT_400x400.jpg",
+//     "https://s2.coinmarketcap.com/static/img/coins/64x64/3306.png",
+//     "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+//     "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
 
-    "https://pbs.twimg.com/profile_images/1707158401522839553/SBK9jMh8_400x400.jpg",
+//     "https://pbs.twimg.com/profile_images/1707158401522839553/SBK9jMh8_400x400.jpg",
+
+
+// ]
+
+
+
+const baseImageLink = '@/../packs'
+export const TIERPACK_IMAGES = [
+    `${baseImageLink}/webpovlogo.jpg`,
+    
+
+    `${baseImageLink}/solana5426.png`,
+    `${baseImageLink}/aifire.png`,
+    `${baseImageLink}/coinbase3408.png`,
+
+    `${baseImageLink}/a16z.jpg`,
+    `${baseImageLink}/paradigm.jpg`,
+    `${baseImageLink}/winkelvoss.png`,
+    `${baseImageLink}/bitcoin1.png`,
+    `${baseImageLink}/layer1eth1027.png`,
+
+    `${baseImageLink}/techpoet.jpg`,
 
 
 ]
