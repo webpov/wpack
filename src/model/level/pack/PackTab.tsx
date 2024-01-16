@@ -136,10 +136,11 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
                           style={{verticalAlign:"bottom"}}
                         />
                     </Html> */}
-                    <ImagePlane 
-  src={TIERPACK_IMAGES[state.index]} 
-  position={[0, 0.001, 0.05]} 
-/>
+
+
+
+
+            {/* <ImagePlane src={TIERPACK_IMAGES[state.index]} position={[0, 0.001, 0.05]} /> */}
 
 
             <DynaText text={`#1${state.index}`} color="#666" emissive="#000"
