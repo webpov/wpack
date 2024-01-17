@@ -111,7 +111,7 @@ export default function PackTabsScene() {
         camera={{ fov: 140, position: [0, isSmallDevice ? .35 : .25, isSmallDevice ? 1.5 : 1.25] }}
         gl={{ preserveDrawingBuffer: true }}
       >
-        <Plane rotation={[-Math.PI/2,0,0]} position={[0,4.5,0]} args={[8,8]}>
+        <Plane rotation={[-Math.PI/2,0,Math.PI/4]} position={[0,4.5,0]} args={[8,8]}>
           <meshStandardMaterial transparent={true} opacity={0.5} />
         </Plane>
         <group scale={1} rotation={[0.25,-Math.PI/2,Math.PI]} position={[0,5,0]} >
