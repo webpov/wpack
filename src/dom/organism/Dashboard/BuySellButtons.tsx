@@ -3,7 +3,7 @@ export const BuySellButtons = () => {
     return (<>
       <div className="flex-wrap gap-3  ">
         <div className="flex-center">
-        <a href="https://wqub.vercel.app" target="_blank" style={{ textDecoration: 'none' }}>
+        <a href="https://wqub.vercel.app/?hd" target="_blank" style={{ textDecoration: 'none' }}>
   <button className="opaci-chov--50 neu-convex tx-white tx-lx pa-3 px-2 bord-r-l-25 border-green tx-altfont-1">
     BUY
   </button>
@@ -13,7 +13,7 @@ export const BuySellButtons = () => {
           </button>
         </div>
         <div className="flex-center">
-        <a href="https://wqub.vercel.app" target="_blank" style={{ textDecoration: 'none' }}>
+        <a href="https://wqub.vercel.app/?hd" target="_blank" style={{ textDecoration: 'none' }}>
   <button className="opaci-chov--50 neu-convex tx-white tx-lx pa-3 px-2 bord-r-l-25 border-red tx-altfont-1">
     SELL
   </button>

@@ -35,7 +35,7 @@ export function SocialMediaRow ({}) {
          /> 
         <div className='tx-white tx-center'>TRADE</div>
       </Link>
-      <Link className='pa-1 nodeco opaci-chov--50' href="https://wqub.vercel.app/" >
+      <Link className='pa-1 nodeco opaci-chov--50' href="https://wqub.vercel.app/?hd" >
         <img src="/webcity.jpg" alt="bank" width={64} height={64} className='block bord-r-100p noverflow' /> 
         <div className='tx-white tx-center'>QUB</div>
       </Link>
