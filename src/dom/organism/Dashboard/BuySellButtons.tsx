@@ -1,23 +1,24 @@
+import Link from 'next/link'
 
 export const BuySellButtons = () => {
     return (<>
       <div className="flex-wrap gap-3  ">
         <div className="flex-center">
-        <a href="https://wqub.vercel.app/?hd=1" target="_blank" style={{ textDecoration: 'none' }}>
+        <Link href="https://wqub.vercel.app/?hd=1" target="_blank" style={{ textDecoration: 'none' }}>
   <button className="opaci-chov--50 neu-convex tx-white tx-lx pa-3 px-2 bord-r-l-25 border-green tx-altfont-1">
     BUY
   </button>
-</a>
+</Link>
           <button className="opaci-chov--50 neu-convex tx-white tx-mdl  pa-2 bord-r-r-25 border-green">
             ⚙️
           </button>
         </div>
         <div className="flex-center">
-        <a href="https://wqub.vercel.app/?hd=1" target="_blank" style={{ textDecoration: 'none' }}>
+        <Link href="https://wqub.vercel.app/?hd=1" target="_blank" style={{ textDecoration: 'none' }}>
   <button className="opaci-chov--50 neu-convex tx-white tx-lx pa-3 px-2 bord-r-l-25 border-red tx-altfont-1">
     SELL
   </button>
-</a>
+</Link>
           <button className="opaci-chov--50 neu-convex tx-white tx-mdl  pa-2 bord-r-r-25 border-red">
             ⚙️
           </button>
@@ -28,7 +29,7 @@ export const BuySellButtons = () => {
 >
   Refresh
 </button>
-<a href="https://wpack.vercel.app/">
+<Link href="https://wpack.vercel.app/">
         <button 
   className="opaci-chov--50 neu-convex tx-white tx-lg pa-1 py-3 bord-r-15 border-white-50 tx-bold-8 tx-altfont-1 underline"
 
@@ -36,7 +37,7 @@ export const BuySellButtons = () => {
 >
   Pack
 </button>
-</a>
+</Link>
       </div>
     </>)
   }
