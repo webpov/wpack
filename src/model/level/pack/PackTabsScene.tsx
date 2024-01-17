@@ -207,7 +207,7 @@ const QubGroup = () => {
     //     $boxRef.current.rotation.z += 0.002; // Rotate Box
     // });
     return (
-        <group position={[0,0,-1]} onPointerDown={() => window.location.href = "https://wqub.vercel.app/?hd"}>
+        <group position={[0,0,-1]} onPointerDown={() => window.location.href = "https://wqub.vercel.app/"}>
             <DynaText text={"QUB"} color={0x000000}
                  position={new Vector3(0,-0.5,0)} rotation={[Math.PI,-Math.PI/2,0]}
                  isSelected={true} font={0.25} onClick={()=>{}}
