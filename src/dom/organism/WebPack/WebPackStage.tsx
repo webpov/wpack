@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { SocialMediaRow } from "@/dom/atom/popup/SocialMediaRow";
 import PackTabsScene from "@/model/level/pack/PackTabsScene";
 
@@ -14,8 +15,10 @@ export default function WebPackStage({}:any) {
     {"chart" == "chart" && <>
       <div className='flex-row pos-abs top-0 left-0 tx-black  Q_lg_x  z-800'>
         <h1 className=" flex-1 mb-0 pb-0  block">
-          <a href="/" className="tx-black nodeco  px-6 opaci-chov--50 ">
-            WebPack
+          <a href="/" className="tx-black nodeco  px-6 opaci-chov--50 flex-center">
+          <Image src="/www.jpg" alt="bank" width={50} height={50} className=' bord-r-100p mr-2 block' />
+            <div className='tx-altfont-5'>Web</div>
+            <div className='tx-altfont-6'>Pack</div>
           </a>
         </h1>
       </div>
