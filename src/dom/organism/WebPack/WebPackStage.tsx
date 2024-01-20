@@ -18,7 +18,7 @@ export default function WebPackStage({}:any) {
       >
         <h1 className="mt-3 flex-1 mb-0 pb-0  block">
           <div className='pa-'>
-            <a href="/" className="spin-60  tx-black nodeco    opaci-chov--50 flex-center  ">
+            <a href="https://webpov.vercel.app/" className="spin-60  tx-black nodeco    opaci-chov--50 flex-center  ">
             {/* <Image src="/www.jpg" alt="bank" width={32} height={32} className='mr-1 bord-r-100p  block Q_xs' /> */}
             <Image src="/webpovlogo.jpg" alt="bank" width={50} height={50} className='mr-1 bord-r-100p  block ' />
             {/* <div className="flex gap">
