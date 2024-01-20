@@ -22,16 +22,16 @@ export function SocialMediaRow ({}) {
     <div className='tx-white w-max-200px  Q_xs_flex-col flex-wrap flex-justify-aroun  tx-center'
 
     >
-      <div className='w-100 Q_sm_x tx-center tx-black opaci-50 gap-1 tx-center flex Q_xs_flex-col pt-2 flex-align-center flex-justify-center'>
+      <div className='w-100 Q_md_x tx-center tx-black opaci-50 gap-1 tx-center flex Q_xs_flex-col pt-2 flex-align-center flex-justify-center'>
         <div className='x-sm'>Ecosystem</div>
       </div>
       <Link className='pt-1 flex-col w-100 nodeco opaci-chov--50' href="https://webpov.vercel.app/" >
         <img src="/webpovlogo.jpg" alt="bank" width={50} height={50} className='spin-60 block bord-r-100p noverflow' /> 
         <div className='tx-black tx-bold-5 tx-center Q_sm_x'>WebPOV</div>
         
-    <div className='w-100 Q_xs tx-center tx-black opaci-50 gap-1 tx-center flex Q_xs_flex-col pt-2 flex-align-center flex-justify-center'>
+    {/* <div className='w-100 Q_sm tx-center tx-black opaci-50 gap-1 tx-center flex Q_xs_flex-col pt-2 flex-align-center flex-justify-center'>
       <div className='x-sm'>POV</div>
-    </div>
+    </div> */}
       </Link>
       
     {/*
@@ -42,20 +42,20 @@ export function SocialMediaRow ({}) {
         <div className='tx-black tx-bold-5 tx-center Q_sm_x'>PACK</div>
       </Link> */}
       <hr className='w-50 mt-3 Q_xs' />
-      <Link className='pa-1 flex-col nodeco opaci-chov--50' href="https://wpack.vercel.app/" >
+      <Link className='pa-1 Q_sm_x flex-col nodeco opaci-chov--50' href="https://wpack.vercel.app/" >
         <img src="/www.jpg" alt="bank" width={36} height={36} className='block bord-r-100p noverflow'
           style={{border:"1px solid gold"}}
          /> 
-        <div className='tx-black tx-bold-5 tx-center Q_sm_'>Pack</div>
+        <div className='tx-black tx-bold-5 tx-center Q_sm_x'>Pack</div>
       </Link>
       <Link className='pa-1 flex-col nodeco opaci-chov--50' href="https://wtrade.vercel.app/" >
         <img src="/webtrade11.jpg" alt="bank" width={36} height={36} className='block bord-r-100p noverflow'
          /> 
-        <div className='tx-black tx-bold-5 tx-center Q_sm_'>Trade</div>
+        <div className='tx-black tx-bold-5 tx-center Q_sm_x'>Trade</div>
       </Link>
-      <Link className='pa-1 flex-col nodeco opaci-chov--50' href="https://wqub.vercel.app/?hd=1" >
+      <Link className='pa-1 Q_sm_x flex-col nodeco opaci-chov--50' href="https://wqub.vercel.app/?hd=1" >
         <img src="/webcity.jpg" alt="bank" width={36} height={36} className='block bord-r-100p noverflow' /> 
-        <div className='tx-black tx-bold-5 tx-center Q_sm_'>Qub</div>
+        <div className='tx-black tx-bold-5 tx-center Q_sm_x'>Qub</div>
       </Link>
       {/* <Link className='pa-1 flex-col nodeco opaci-chov--50' href="https://wfun.vercel.app/" >
         <img src="/wfun.jpg" alt="bank" width={36} height={36} className='block bord-r-100p noverflow'
