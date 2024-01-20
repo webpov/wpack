@@ -70,7 +70,12 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
 
 
     <group position={new THREE.Vector3(...state.position)}>
-
+    <Box position={[0,0.2,-0.05]} args={[0.2,0.2,0.3]} >
+        <meshStandardMaterial color={"white"} />
+      </Box>
+      <Box position={[-1,0.2,-0.1]} args={[2,0.1,0.1]} >
+        <meshStandardMaterial color={"white"} />
+      </Box>
       
       <HoverSelector
       isEnabled={!isSelected}
@@ -102,12 +107,7 @@ export const PackTab = forwardRef(({ state, calls }: any)=> {
       <RoundedBox position={[-1.75,0.2,-0.1]} args={[0.75,0.75,0.25]} >
         <meshStandardMaterial color={"white"} />
       </RoundedBox>
-      <Box position={[0,0.2,-0.05]} args={[0.2,0.2,0.3]} >
-        <meshStandardMaterial color={"white"} />
-      </Box>
-      <Box position={[-1,0.2,-0.1]} args={[2,0.1,0.1]} >
-        <meshStandardMaterial color={"white"} />
-      </Box>
+      
       
       {/* <Box args={[0.25,0.25,0.25]} position={[-0.85,!isMoonSpinActive && !reachedEnd ? 0.2 : 0.1,0]}>
         <meshStandardMaterial color={!isMoonSpinActive && !reachedEnd ? "red" : "grey"} />

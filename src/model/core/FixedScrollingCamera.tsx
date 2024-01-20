@@ -18,6 +18,9 @@ export const FixedScrollingCamera = ({dimensionThreshold=24}:{dimensionThreshold
   useFrame(() => {
     if (Math.abs(velocity.current) < 0.0005) velocity.current = 0; // Threshold to stop damping
     if (velocity.current !== 0) {
+      console.log("camera.position.y",camera.position.y)
+      if (camera.position.y - velocity.current > 5) {return}
+      if (camera.position.y - velocity.current < -20) {return}
       camera.position.y -= velocity.current;
       if (lightRef.current) {
         lightRef.current.position.y -= velocity.current / 1.25;

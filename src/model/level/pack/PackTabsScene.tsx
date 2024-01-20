@@ -161,7 +161,7 @@ const PackGroup = () => {
     // });
 
     return (
-        <group position={[0,0,1]} onPointerDown={() => window.location.href = "https://wpack.vercel.app/"}>
+        <group position={[0,0,1]} onPointerDown={(e) => {e.stopPropagation(); window.location.href = "https://wpack.vercel.app/"}}>
             <DynaText text={"PACK"} color={0x000000}
                      position={new Vector3(0,-0.5,0)} rotation={[Math.PI,-Math.PI/2,0]}
                      isSelected={true} font={0.25} onClick={()=>{}}
@@ -183,7 +183,7 @@ const TradeGroup = () => {
     //     $cylinderRef.current.rotation.y -= 0.003; // Rotate Cylinder
     // });
     return (
-        <group position={[1,0,0]} onPointerDown={() => window.location.href = "https://wtrade.vercel.app/"}>
+        <group position={[1,0,0]} onPointerDown={(e) => {e.stopPropagation(); window.location.href = "https://wtrade.vercel.app/"}}>
             <DynaText text={"TRADE"} color={0x000000}
                      position={new Vector3(0,-0.5,0)} rotation={[Math.PI,-Math.PI/2,0]}
                      isSelected={true} font={0.25} onClick={()=>{}}
@@ -207,7 +207,7 @@ const QubGroup = () => {
     //     $boxRef.current.rotation.z += 0.002; // Rotate Box
     // });
     return (
-        <group position={[0,0,-1]} onPointerDown={() => window.location.href = "https://wqub.vercel.app/?hd=1"}>
+        <group position={[0,0,-1]} onPointerDown={(e) => {e.stopPropagation(); window.location.href = "https://wqub.vercel.app/?hd=1"}}>
             <DynaText text={"QUB"} color={0x000000}
                  position={new Vector3(0,-0.5,0)} rotation={[Math.PI,-Math.PI/2,0]}
                  isSelected={true} font={0.25} onClick={()=>{}}
