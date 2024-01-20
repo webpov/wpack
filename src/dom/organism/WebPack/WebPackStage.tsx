@@ -16,21 +16,19 @@ export default function WebPackStage({}:any) {
       <div className='flex-row pos-abs top-0 left-0 tx-black  Q_lg_  z-800 bg-glass-50' 
         style={{borderRadius: "0 0 50px 0"}}
       >
-        <h1 className="mt-3 flex-1 mb-0 pb-0  block">
-          <div className='pa-'>
+        <h1 className="mt-0 flex-1 mb-0 pb-0  block">
+          {/* <div className='pa-'>
             <a href="https://webpov.vercel.app/" className="spin-60  tx-black nodeco    opaci-chov--50 flex-center  ">
-            {/* <Image src="/www.jpg" alt="bank" width={32} height={32} className='mr-1 bord-r-100p  block Q_xs' /> */}
-            <Image src="/webpovlogo.jpg" alt="bank" width={50} height={50} className='mr-1 bord-r-100p  block ' />
-            {/* <div className="flex gap">
-              <div style={{textShadow:"2px 2px black",color:"white", }} className='tx-altfont-5 tx-bold-4'>Web</div>
-              <div style={{textShadow:"",color:"black",paddingTop:"2px", paddingLeft:"2px"}} className='tx-bold-6 tx-altfont- '>Pack</div>
-              </div> */}
+            <Image src="/webpovlogo.jpg" alt="bank" width={50} height={50} className='border-white mr-1 bord-r-100p  block ' />
+            
             </a>
-          </div>
+          </div> */}
           
           <a href="/" className="tx-black nodeco  pa-3 opaci-chov--50 flex-center   ">
           {/* <Image src="/www.jpg" alt="bank" width={32} height={32} className='mr-1 bord-r-100p  block Q_xs' /> */}
-          <Image src="/www.jpg" alt="bank" width={50} height={50} className='mr-1 bord-r-100p  block ' />
+          <Image src="/www.jpg" alt="bank" width={45} height={45} className='mr-1 bord-r-100p  block ' 
+            style={{border: "1px solid transparent"}}
+          />
           {/* <div className="flex gap">
             <div style={{textShadow:"2px 2px black",color:"white", }} className='tx-altfont-5 tx-bold-4'>Web</div>
             <div style={{textShadow:"",color:"black",paddingTop:"2px", paddingLeft:"2px"}} className='tx-bold-6 tx-altfont- '>Pack</div>
@@ -49,7 +47,7 @@ export default function WebPackStage({}:any) {
 
     
     <div className='flex-row flex-align-stretch tx-black w-100 z-10 h-100vh' >
-         <div className='ma-3 pa-1 pos-abs z-800 left-0 bottom-0 Q_sm_x w-10 box-shadow-9-b bg-glass-20 bord-r-25 neu-convex flex-col flex-justify-start'>
+         <div className='ma-3 pa-1 pos-abs z-800 left-0 bottom-0   box-shadow-9-b bg-glass-20 bord-r-25 neu-convex flex-col flex-justify-start'>
         <SocialMediaRow />
         </div>
       <div className='tx-roman flex flex-align-stretch flex-1  flex-center pos-rel' >
